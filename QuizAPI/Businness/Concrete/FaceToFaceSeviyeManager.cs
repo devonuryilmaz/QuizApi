@@ -42,6 +42,11 @@ namespace QuizAPI.Businness.Concrete
             return _face.Get(i => i.ID == faceToFaceId && i.isAktif == true);
         }
 
+        public List<FaceToFaceSeviye> GetOturumFace(int oturumID)
+        {
+            return _face.GetAll(f => f.OturumID == oturumID && f.isAktif == true).ToList();
+        }
+
         public FaceToFaceSeviye Update(FaceToFaceSeviye faceToFace)
         {
             _face.Update(faceToFace);

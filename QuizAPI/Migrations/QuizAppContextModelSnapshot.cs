@@ -20,12 +20,30 @@ namespace QuizAPI.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.AdminPanel", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("kategoriHeaderMessage");
+
+                    b.Property<string>("src");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("AdminPanel");
+                });
+
             modelBuilder.Entity("QuizAPI.Entities.Concrete.Atıf", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Aciklama");
+
+                    b.Property<int>("OturumID");
+
+                    b.Property<int?>("OturumSirasi");
 
                     b.Property<int>("SıraNumara");
 
@@ -40,6 +58,8 @@ namespace QuizAPI.Migrations
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AtıfSeviyeID");
 
                     b.Property<int>("AtıfSoruID");
 
@@ -90,22 +110,6 @@ namespace QuizAPI.Migrations
                     b.ToTable("AtıfSoru");
                 });
 
-            modelBuilder.Entity("QuizAPI.Entities.Concrete.FaceToFace", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Aciklama");
-
-                    b.Property<int>("SıraNumarası");
-
-                    b.Property<bool>("isAktif");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("FaceToFaces");
-                });
-
             modelBuilder.Entity("QuizAPI.Entities.Concrete.FaceToFaceKategori", b =>
                 {
                     b.Property<int>("ID")
@@ -131,6 +135,8 @@ namespace QuizAPI.Migrations
 
                     b.Property<string>("Url");
 
+                    b.Property<string>("aciklama");
+
                     b.HasKey("ID");
 
                     b.ToTable("FaceToFacePhoto");
@@ -141,7 +147,9 @@ namespace QuizAPI.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("FaceToFaceSoruID");
+                    b.Property<string>("Aciklama");
+
+                    b.Property<int>("FaceToFacePhotoID");
 
                     b.Property<string>("Url");
 
@@ -150,6 +158,26 @@ namespace QuizAPI.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("FaceToFaceSecenek");
+                });
+
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.FaceToFaceSeviye", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Aciklama");
+
+                    b.Property<int>("OturumID");
+
+                    b.Property<int?>("OturumSirasi");
+
+                    b.Property<int>("SıraNumarası");
+
+                    b.Property<bool>("isAktif");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("FaceToFaces");
                 });
 
             modelBuilder.Entity("QuizAPI.Entities.Concrete.FaceToFaceSoru", b =>
@@ -195,6 +223,22 @@ namespace QuizAPI.Migrations
 
                     b.Property<bool>("Photo4isTrue");
 
+                    b.Property<string>("Photo5Url");
+
+                    b.Property<bool>("Photo5isTrue");
+
+                    b.Property<string>("Photo6Url");
+
+                    b.Property<bool>("Photo6isTrue");
+
+                    b.Property<string>("Photo7Url");
+
+                    b.Property<bool>("Photo7isTrue");
+
+                    b.Property<string>("Photo8Url");
+
+                    b.Property<bool>("Photo8isTrue");
+
                     b.HasKey("ID");
 
                     b.ToTable("GazeCastCevap");
@@ -223,9 +267,13 @@ namespace QuizAPI.Migrations
 
                     b.Property<string>("Aciklama");
 
+                    b.Property<int?>("OturumSirasi");
+
                     b.Property<int>("SıraNumarası");
 
                     b.Property<bool>("isAktif");
+
+                    b.Property<int>("oturumID");
 
                     b.HasKey("ID");
 
@@ -257,8 +305,7 @@ namespace QuizAPI.Migrations
                     b.Property<int>("KategoriID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Aciklama")
-                        .IsRequired();
+                    b.Property<string>("Aciklama");
 
                     b.Property<string>("KategoriAdi")
                         .IsRequired();
@@ -266,6 +313,8 @@ namespace QuizAPI.Migrations
                     b.Property<string>("PublicID");
 
                     b.Property<int>("SıraNo");
+
+                    b.Property<int?>("Tema");
 
                     b.Property<string>("Url");
 
@@ -281,8 +330,12 @@ namespace QuizAPI.Migrations
                     b.Property<int>("KullaniciID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("AdSoyad");
+
                     b.Property<string>("KullaniciAdi")
                         .IsRequired();
+
+                    b.Property<string>("MailAdresi");
 
                     b.Property<string>("Sifre")
                         .IsRequired();
@@ -292,6 +345,32 @@ namespace QuizAPI.Migrations
                     b.HasKey("KullaniciID");
 
                     b.ToTable("Kullanicilar");
+                });
+
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.KullaniciAtıfRapor", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("KullaniciID");
+
+                    b.Property<int?>("OturumID");
+
+                    b.Property<int?>("OturumSirasi");
+
+                    b.Property<int>("SeviyeID");
+
+                    b.Property<DateTime>("endDate");
+
+                    b.Property<bool>("isTamamlandi");
+
+                    b.Property<bool>("oturumTamamlandi");
+
+                    b.Property<DateTime>("startDate");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("KullaniciAtıfRapor");
                 });
 
             modelBuilder.Entity("QuizAPI.Entities.Concrete.KullaniciIlerleme", b =>
@@ -306,6 +385,56 @@ namespace QuizAPI.Migrations
                     b.HasKey("IlerlemeID");
 
                     b.ToTable("KullaniciIlerlemeler");
+                });
+
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.KullaniciRapor", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("DogruSayisi");
+
+                    b.Property<int>("KategoriID");
+
+                    b.Property<int>("KullaniciID");
+
+                    b.Property<int?>("OturumID");
+
+                    b.Property<int?>("OturumSirasi");
+
+                    b.Property<int>("SeviyeID");
+
+                    b.Property<int>("YanlisSayisi");
+
+                    b.Property<DateTime>("endDate");
+
+                    b.Property<bool>("isKategoriCustom");
+
+                    b.Property<bool>("isTamamlandi");
+
+                    b.Property<bool>("oturumTamamlandi");
+
+                    b.Property<DateTime>("startDate");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("KullaniciRapor");
+                });
+
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.Oturum", b =>
+                {
+                    b.Property<int>("OturumID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("OturumAdi");
+
+                    b.Property<string>("SeviyelerID");
+
+                    b.Property<bool>("isAktif");
+
+                    b.HasKey("OturumID");
+
+                    b.ToTable("Oturum");
                 });
 
             modelBuilder.Entity("QuizAPI.Entities.Concrete.Secenek", b =>
@@ -338,8 +467,18 @@ namespace QuizAPI.Migrations
 
                     b.Property<int>("KategoriID");
 
+                    b.Property<int?>("OturumID");
+
+                    b.Property<int?>("OturumSirasi");
+
                     b.Property<string>("SeviyeNumarasi")
                         .IsRequired();
+
+                    b.Property<int>("SiraNumarasi");
+
+                    b.Property<int?>("SoruSuresi");
+
+                    b.Property<bool>("isAktif");
 
                     b.HasKey("SeviyeID");
 
@@ -371,11 +510,52 @@ namespace QuizAPI.Migrations
 
                     b.Property<string>("Url");
 
+                    b.Property<bool>("isAktif");
+
                     b.HasKey("SoruID");
 
                     b.HasIndex("SeviyeID");
 
                     b.ToTable("Sorular");
+                });
+
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.SoruFotograflari", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("SecenekAciklama");
+
+                    b.Property<int>("Sira");
+
+                    b.Property<int>("SoruID");
+
+                    b.Property<string>("Url");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("SoruFotograflari");
+                });
+
+            modelBuilder.Entity("QuizAPI.Entities.Concrete.UserMessages", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AlanUserId");
+
+                    b.Property<int>("GonderenUserId");
+
+                    b.Property<string>("Mesaj")
+                        .IsRequired();
+
+                    b.Property<DateTime>("Tarih");
+
+                    b.Property<bool>("isOkundu");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("UserMessages");
                 });
 
             modelBuilder.Entity("QuizAPI.Entities.Concrete.Secenek", b =>

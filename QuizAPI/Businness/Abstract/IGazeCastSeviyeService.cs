@@ -17,5 +17,8 @@ namespace QuizAPI.Businness.Abstract
         List<GazeCastSeviye> GetAllGazeCastSeviye(bool isAdmin);
 
         void Delete(int id);
+
+        List<GazeCastSeviye> GetOturumGaze(int oturumID);
+
     }
 }

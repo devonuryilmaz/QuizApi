@@ -115,7 +115,23 @@ namespace QuizAPI.Controllers
             return _kullaniciAtıfRaporService.GetkullaniciAtıfRaporAll();
         }
 
+        [HttpGet]
+        [Route("getSonOturumRaporu")]
+        public KullaniciAtıfRapor getSonOturumRaporu(int oturumID, int kullaniciID)
+        {
+            if (oturumID > 0)
+            {
+                var kullaniciRapor = _kullaniciAtıfRaporService.GetkullaniciAtıfRaporAll().
+                                        Where(r => r.OturumID == oturumID && r.KullaniciID == kullaniciID).OrderBy(r => r.OturumSirasi).FirstOrDefault();
 
+                return kullaniciRapor;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
 
 
     }

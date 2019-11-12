@@ -22,5 +22,6 @@ namespace QuizAPI.Businness.Abstract
         List<RaporUser> GetKategoriKullaniciUser(int kategoriId, bool isCustom);
         List<RaporSoru> GetKullaniciRaporSoru(int kullaniciId, int kategoriId, bool isCustom);
 
+        KullaniciRapor GetOturumKullanici(int kullaniciID);
     }
 }

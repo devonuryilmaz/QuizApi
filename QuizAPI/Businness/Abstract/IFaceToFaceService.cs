@@ -17,5 +17,8 @@ namespace QuizAPI.Businness.Abstract
         List<FaceToFaceSeviye> GetAllfaceToFace(bool isAdmin);
 
         void Delete(int id);
+
+        List<FaceToFaceSeviye> GetOturumFace(int oturumID);
+
     }
 }

@@ -19,5 +19,8 @@ namespace QuizAPI.Businness.Abstract
         void Delete(int id);
 
         List<Seviye> GetSeviyeAllByKategoriIDList(int kategoriID);
+
+        List<Seviye> GetSeviyeOturumList(int oturumID);
+
     }
 }

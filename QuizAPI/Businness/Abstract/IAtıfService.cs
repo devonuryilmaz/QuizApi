@@ -17,5 +17,7 @@ namespace QuizAPI.Businness.Abstract
         List<Atıf> GetAllAtıf(bool isAdmin);
 
         void Delete(int id);
+
+        List<Atıf> GetOturumAtif(int oturumID);
     }
 }

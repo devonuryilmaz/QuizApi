@@ -33,6 +33,7 @@ namespace QuizAPI.Data
         public DbSet<KullaniciRapor> KullaniciRapor { get; set; }
         public DbSet<KullaniciAtıfRapor> KullaniciAtıfRapor { get; set; }
         public DbSet<AdminPanel> AdminPanel { get; set; }
+        public DbSet<Oturum> Oturum { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

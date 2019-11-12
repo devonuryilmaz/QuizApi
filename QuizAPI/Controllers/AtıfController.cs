@@ -91,5 +91,12 @@ namespace QuizAPI.Controllers
         {
             return _atıfService.GetAllAtıf(isAdmin);
         }
+
+        [HttpGet]
+        [Route("getAtifOturum")]
+        public IEnumerable<Atıf> GetAtifOturum(int oturumID)
+        {
+            return _atıfService.GetOturumAtif(oturumID);
+        }
     }
 }

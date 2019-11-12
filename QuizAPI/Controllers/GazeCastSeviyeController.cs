@@ -91,5 +91,12 @@ namespace QuizAPI.Controllers
         {
             return _gazeCastSeviyeService.GetAllGazeCastSeviye(isAdmin);
         }
+
+        [HttpGet]
+        [Route("getGazeOturum")]
+        public IEnumerable<GazeCastSeviye> GetAtifOturum(int oturumID)
+        {
+            return _gazeCastSeviyeService.GetOturumGaze(oturumID);
+        }
     }
 }

@@ -14,5 +14,8 @@ namespace QuizAPI.Entities.Concrete
         public bool isTamamlandi { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
+        public int? OturumID { get; set; }
+        public int? OturumSirasi { get; set; }
+        public bool oturumTamamlandi { get; set; }
     }
 }

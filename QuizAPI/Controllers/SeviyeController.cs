@@ -14,9 +14,11 @@ namespace QuizAPI.Controllers
     public class SeviyeController : Controller
     {
         private ISeviyeService _seviyeService;
-        public SeviyeController(ISeviyeService seviyeService)
+        private IKullaniciRaporService _kullaniciRaporService;
+        public SeviyeController(ISeviyeService seviyeService, IKullaniciRaporService kullaniciRaporService)
         {
             _seviyeService = seviyeService;
+            _kullaniciRaporService = kullaniciRaporService;
         }
 
         [HttpGet]
@@ -43,6 +45,12 @@ namespace QuizAPI.Controllers
             return _seviyeService.GetSeviyeAllByKategoriIDList(kategoriID);
         }
 
+        [HttpGet]
+        [Route("getOturum")]
+        public IEnumerable<Seviye> GetOturumSeviye(int oturumID)
+        {
+            return _seviyeService.GetSeviyeOturumList(oturumID);
+        }
 
         [HttpGet]
         [Route("getAll")]
@@ -101,6 +109,22 @@ namespace QuizAPI.Controllers
             return BadRequest();
         }
 
+        [HttpGet]
+        [Route("getSonOturumRaporu")]
+        public KullaniciRapor getSonOturumRaporu(int oturumID, int kullaniciID)
+        {
+            if (oturumID > 0)
+            {
+                var kullaniciRapor = _kullaniciRaporService.GetkullaniciRaporAll().
+                                        Where(r => r.OturumID == oturumID && r.KullaniciID == kullaniciID).OrderByDescending(r => r.OturumSirasi).FirstOrDefault();
 
+                return kullaniciRapor;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
     }
 }

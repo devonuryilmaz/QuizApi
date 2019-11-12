@@ -23,13 +23,16 @@ namespace QuizAPI.Controllers
         private ISoruService _soruService;
         private ISecenekService _secenekService;
         private ISoruFotograflariService _soruFotografService;
-        public PhotoController(IOptions<CloudinarySettings> cloudinaryConfig, IKategoriService kategoriService, ISoruService soruService, ISecenekService secenekService, ISoruFotograflariService soruFotografService)
+        private IKategoriHeaderService _adminService;
+        public PhotoController(IOptions<CloudinarySettings> cloudinaryConfig, IKategoriService kategoriService, ISoruService soruService, ISecenekService secenekService, ISoruFotograflariService soruFotografService
+            , IKategoriHeaderService adminService)
         {
             _kategoriService = kategoriService;
             _cloudinaryConfig = cloudinaryConfig;
             _soruService = soruService;
             _secenekService = secenekService;
             _soruFotografService = soruFotografService;
+            _adminService = adminService;
 
             Account account = new Account(
                 _cloudinaryConfig.Value.CloudName,
@@ -305,6 +308,37 @@ namespace QuizAPI.Controllers
             _soruFotografService.Update(soruFoto);
 
             return Ok(soruFoto.Url);
+        }
+
+        [HttpPost("video/adminPanel/{id}"), DisableRequestSizeLimit]
+        public ActionResult UploadAdminPanelVideo(int id)
+        {
+            var file = Request.Form.Files[0];
+
+            var uploadResult = new VideoUploadResult();
+            if (file.Length > 0)
+            {
+                using (var stream = file.OpenReadStream())
+                {
+                    var uploadParams = new VideoUploadParams
+                    {
+                        File = new FileDescription(file.Name, stream)
+                    };
+                    uploadResult = _cloudinary.Upload(uploadParams);
+                }
+            }
+            var Url = uploadResult.Uri.ToString();//veritabanına clouddan dönecek url'i yazdık.
+            var PublicId = uploadResult.PublicId;
+            var headerVideo = _adminService.Get();
+
+            if (string.IsNullOrEmpty(headerVideo.ID.ToString()))
+            {
+                return BadRequest();
+            }
+            headerVideo.src = Url;
+            _adminService.Update(headerVideo);
+
+            return Ok(headerVideo.src);
         }
     }
 }

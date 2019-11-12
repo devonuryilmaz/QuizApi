@@ -25,5 +25,9 @@ namespace QuizAPI.Entities.Concrete
         [Range(1,Int32.MaxValue)]
         public int KategoriID { get; set; }
         public Kategori Kategori { get; set; }
+
+        public int? OturumID { get; set; }
+
+        public int? OturumSirasi { get; set; }
     }
 }

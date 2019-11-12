@@ -15,6 +15,8 @@ namespace QuizAPI.Entities.Concrete
         public int SıraNumarası { get; set; }
         public string Aciklama { get; set; }
         public bool isAktif { get; set; }
-        
+        public int oturumID { get; set; }
+        public int? OturumSirasi { get; set; }
+
     }
 }

@@ -43,6 +43,11 @@ namespace QuizAPI.Businness.Concrete
             //.OrderBy(s => s.SiraNumarasi).Where(s => s.isAktif == true).ToList();
         }
 
+        public List<Atıf> GetOturumAtif(int oturumID)
+        {
+            return _atıfDal.GetAll(a => a.OturumID == oturumID && a.isAktif == true).ToList();
+        }
+
         public Atıf Update(Atıf atıf)
         {
             _atıfDal.Update(atıf);

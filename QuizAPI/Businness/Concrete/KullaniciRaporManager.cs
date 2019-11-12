@@ -202,7 +202,7 @@ namespace QuizAPI.Businness.Concrete
             //    this.Delete(r.ID);
             //}
 
-            var rapor = _kullaniciRaporDal.GetAll(k => k.isKategoriCustom == kullaniciRapor.isKategoriCustom && k.KategoriID == kullaniciRapor.KategoriID && k.SeviyeID == kullaniciRapor.SeviyeID && k.KullaniciID == kullaniciRapor.KullaniciID);
+            var rapor = _kullaniciRaporDal.GetAll(k => k.isKategoriCustom == kullaniciRapor.isKategoriCustom && k.OturumID == kullaniciRapor.OturumID && k.SeviyeID == kullaniciRapor.SeviyeID && k.KullaniciID == kullaniciRapor.KullaniciID);
             if(rapor.Count > 0)
             {
                 return true;
@@ -218,7 +218,7 @@ namespace QuizAPI.Businness.Concrete
             //    this.Delete(r.ID);
             //}
 
-            var rapor = _kullaniciRaporDal.GetAll(k => k.isKategoriCustom == kullaniciRapor.isKategoriCustom && k.KategoriID == kullaniciRapor.KategoriID && k.SeviyeID == kullaniciRapor.SeviyeID && k.KullaniciID == kullaniciRapor.KullaniciID).SingleOrDefault();
+            var rapor = _kullaniciRaporDal.GetAll(k => k.isKategoriCustom == kullaniciRapor.isKategoriCustom && k.OturumID == kullaniciRapor.OturumID && k.SeviyeID == kullaniciRapor.SeviyeID && k.KullaniciID == kullaniciRapor.KullaniciID).SingleOrDefault();
             if (rapor != null)
             {
                 return rapor;
@@ -231,6 +231,21 @@ namespace QuizAPI.Businness.Concrete
         {
             _kullaniciRaporDal.Update(kullaniciRapor);
             return kullaniciRapor;
+        }
+
+        public KullaniciRapor GetOturumKullanici(int kullaniciID)
+        {
+            try
+            {
+                int maxValue = _kullaniciRaporDal.GetAll(r => r.KullaniciID == kullaniciID).Max(r => r.OturumID).Value;
+                var result = _kullaniciRaporDal.Get(r => r.KullaniciID == kullaniciID && r.OturumID == maxValue);
+                return result;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
         }
     }
 }

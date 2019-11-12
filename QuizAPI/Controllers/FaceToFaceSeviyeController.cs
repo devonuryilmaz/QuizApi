@@ -89,5 +89,13 @@ namespace QuizAPI.Controllers
         {
             return _faceToFaceService.GetAllfaceToFace(isAdmin);
         }
+
+        [HttpGet]
+        [Route("getFaceOturum")]
+        public IEnumerable<FaceToFaceSeviye> GetAtifOturum(int oturumID)
+        {
+            return _faceToFaceService.GetOturumFace(oturumID);
+        }
+
     }
 }

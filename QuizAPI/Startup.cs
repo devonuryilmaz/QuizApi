@@ -104,6 +104,9 @@ namespace QuizAPI
             services.AddScoped<IAdminPanelDal, EfAdminPanelDal>();
             services.AddScoped<IKategoriHeaderService, AdminPanelManager>();
 
+            services.AddScoped<IOturumDal, EfOturumDal>();
+            services.AddScoped<IOturumService, OturumManager>();
+
             services.AddScoped<IAuthRepository, AuthRepository>();//Auth service
             //var connection = @"Server=(localdb)\mssqllocaldb;Database=QuizApp;Trusted_Connection=true";
             // services.AddDbContext<QuizAppContext>(options => options.UseSqlServer(connection));

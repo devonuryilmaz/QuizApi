@@ -11,10 +11,11 @@ namespace QuizAPI.Businness.Concrete
     public class SeviyeManager : ISeviyeService
     {
         ISeviyeDal _seviyeDal;
-        public SeviyeManager(ISeviyeDal seviyeDal)
+        IKategoriDal _kategoriDal;
+        public SeviyeManager(ISeviyeDal seviyeDal, IKategoriDal kategoriDal)
         {
             _seviyeDal = seviyeDal;
-
+            _kategoriDal = kategoriDal;
         }
 
         public Seviye GetSeviyeByID(int seviyeID)//örnek olsun
@@ -54,6 +55,12 @@ namespace QuizAPI.Businness.Concrete
         public List<Seviye> GetSeviyeAllByKategoriIDList(int kategoriID)
         {
             return _seviyeDal.GetAll(k => k.KategoriID == kategoriID).OrderBy(s => s.SiraNumarasi).Where(s => s.isAktif == true).ToList();//_kategoriyDal'daki GetAll()'ın içine delegasyonlar tanımlayıp sql sorgusu gibi kullanabilirsin.
+        }
+
+        public List<Seviye> GetSeviyeOturumList(int oturumID)
+        {
+            return _seviyeDal.GetAll(s => s.OturumID == oturumID).Where(s => s.isAktif == true && (
+            _kategoriDal.Get(k=> k.KategoriID == s.KategoriID && k.isAktif == true))!= null).ToList();
         }
     }
 }

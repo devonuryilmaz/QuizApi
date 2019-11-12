@@ -42,6 +42,11 @@ namespace QuizAPI.Businness.Concrete
             return _gazeCastSeviyeDal.Get(i=>i.ID==GazeCastSeviyeId && i.isAktif == true); 
         }
 
+        public List<GazeCastSeviye> GetOturumGaze(int oturumID)
+        {
+            return _gazeCastSeviyeDal.GetAll(g => g.oturumID == oturumID && g.isAktif == true).ToList();
+        }
+
         public GazeCastSeviye Update(GazeCastSeviye GazeCastSeviye)
         {
             _gazeCastSeviyeDal.Update(GazeCastSeviye);

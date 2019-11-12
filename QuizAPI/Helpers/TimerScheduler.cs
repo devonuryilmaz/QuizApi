@@ -335,7 +335,7 @@ namespace QuizAPI.Helpers
                         using (var message = new MailMessage())
                         {
                             message.To.Add(new MailAddress(userMailAddress, userAdSoyad));
-                            message.From = new MailAddress("fatih09699@gmail.com", "Sosyal Biliş");
+                            message.From = new MailAddress("onuryilmaz.cbu@gmail.com", "Sosyal Biliş");
 
 
                             message.Subject = "Egzersiz Hatırlat";
@@ -344,8 +344,8 @@ namespace QuizAPI.Helpers
 
                             using (var client = new SmtpClient("smtp.gmail.com"))
                             {
-                                client.Port = 587;
-                                client.Credentials = new NetworkCredential("fatih09699@gmail.com", "fatihche1994");
+                                client.Port = 465;
+                                client.Credentials = new NetworkCredential("onuryilmaz.cbu@gmail.com", "32573257");
                                 client.EnableSsl = true;
                                 client.Send(message);
                             }
