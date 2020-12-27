@@ -126,7 +126,7 @@ namespace QuizAPI.Controllers
             }
             var Url = uploadResult.Uri.ToString();//veritabanına clouddan dönecek url'i yazdık.
 
-            var gaze = _gazeCastKategoriService.GetGazeCastKategoriByID(1);
+            var gaze = _gazeCastKategoriService.GetGazeCastKategoriByID(2);
             if (string.IsNullOrEmpty(gaze.ID.ToString()))
             {
                 return BadRequest();
@@ -158,7 +158,7 @@ namespace QuizAPI.Controllers
             }
             var Url = uploadResult.Uri.ToString();//veritabanına clouddan dönecek url'i yazdık.
 
-            var face = _faceToFaceKategoriService.GetFaceToFaceKategoriByID(1);
+            var face = _faceToFaceKategoriService.GetFaceToFaceKategoriByID(5);
             if (string.IsNullOrEmpty(face.ID.ToString()))
             {
                 return BadRequest();

@@ -791,6 +791,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Oturum", function() { return Oturum; });
 var Oturum = /** @class */ (function () {
     function Oturum() {
+        this.seviyeler = [];
     }
     return Oturum;
 }());

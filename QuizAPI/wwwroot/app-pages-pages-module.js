@@ -261,7 +261,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-4\" [ngClass]=\"{'col-md-12':!user}\">\n    <button nbButton hero size=\"large\" fullWidth status=\"danger\" (click)=\"turnToOturum()\">EGZERSİZLERİ GÖSTER</button>\n  </div>\n\n  <div class=\"col-md-4\">\n    <button nbButton hero size=\"large\" *ngIf=\"user\" fullWidth status=\"info\" (click)=\"turnToKategori()\">KATEGORİLERİ\n      GÖSTER</button>\n  </div>\n\n  <div class=\"col-md-4\">\n    <button nbButton hero size=\"large\" *ngIf=\"user\" fullWidth status=\"success\" (click)=\"openCustom(dialog)\">KATEGORİ\n      MESAJI GÜNCELLE</button>\n  </div>\n\n  <div class=\"col-md-12\" style=\"margin-top: 1rem;\">\n    <nb-card>\n      <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n        <h5 style=\"color:black;\">\n          {{headerSrc?.kategoriHeaderMessage}}\n        </h5>\n      </div>\n      <div class=\"card-body\" style=\"text-align: center\">\n        <video #videoPlayer style=\"margin:auto;width: 80%;\" class=\"video-stream\" controls>\n          <source [src]=\"headerSrc?.src\">\n          Your browser does not support the video tag.\n        </video>\n      </div>\n    </nb-card>\n  </div>\n</div>\n\n\n<ng-template #dialog let-data let-ref=\"dialogRef\">\n  <nb-card style='width:45rem;'>\n    <nb-card-header>Açıklama Güncelle</nb-card-header>\n    <nb-card-body>\n      <form [formGroup]=\"header\" (ngSubmit)=\"onSubmit(dialog)\">\n        <label>Açıklama:</label>\n        <textarea nbInput fullWidth shape=\"round\" formControlName=\"message\" class=\"mt-3 form-control\"\n          style=\"height:10rem;\" placeholder=\"Açıklama\"></textarea>\n        <label>Video:</label><br>\n        <div class=\"custom-file\">\n          <input type=\"file\" class=\"custom-file-input\" id=\"customFile\" accept=\"video/*\" (change)=\"degisti($event)\"\n            #file>\n          <label class=\"custom-file-label\" for=\"customFile\">Dosya Seçiniz</label>\n        </div>\n        <button nbButton status=\"info\" style=\"float:right\" class=\"mt-3\">Güncelle</button>\n      </form>\n    </nb-card-body>\n  </nb-card>\n</ng-template>"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-4\" [ngClass]=\"{'col-md-12':!user}\">\n    <button nbButton hero size=\"large\" fullWidth status=\"danger\" (click)=\"turnToOturum()\">EGZERSİZLERİ GÖSTER</button>\n  </div>\n\n  <div class=\"col-md-4\">\n    <button nbButton hero size=\"large\" *ngIf=\"user\" fullWidth status=\"info\" (click)=\"turnToKategori()\">KATEGORİLERİ\n      GÖSTER</button>\n  </div>\n\n  <div class=\"col-md-4\">\n    <button nbButton hero size=\"large\" *ngIf=\"user\" fullWidth status=\"success\" (click)=\"openCustom(dialog)\">KATEGORİ\n      MESAJI GÜNCELLE</button>\n  </div>\n\n  <div class=\"col-md-12\" style=\"margin-top: 1rem;\">\n    <nb-card>\n      <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n        <h5 style=\"color:black;\">\n          {{headerSrc?.kategoriHeaderMessage}}\n        </h5>\n      </div>\n      <div class=\"card-body\" style=\"text-align: center\" [nbSpinner]=\"loading\" nbSpinnerStatus=\"info\"\n        nbSpinnerMessage=\"Tanıtım Videosu Yükleniyor...\">\n        <video #videoPlayer style=\"margin:auto;width: 80%;\" class=\"video-stream\" controls>\n          <source [src]=\"headerSrc?.src\">\n          Your browser does not support the video tag.\n        </video>\n      </div>\n    </nb-card>\n  </div>\n</div>\n\n\n<ng-template #dialog let-data let-ref=\"dialogRef\">\n  <nb-card style='width:45rem;'>\n    <nb-card-header>Açıklama Güncelle</nb-card-header>\n    <nb-card-body>\n      <form [formGroup]=\"header\" (ngSubmit)=\"onSubmit(dialog)\">\n        <label>Açıklama:</label>\n        <textarea nbInput fullWidth shape=\"round\" formControlName=\"message\" class=\"mt-3 form-control\"\n          style=\"height:10rem;\" placeholder=\"Açıklama\"></textarea>\n        <label>Video:</label><br>\n        <div class=\"custom-file\">\n          <input type=\"file\" class=\"custom-file-input\" id=\"customFile\" accept=\"video/*\" (change)=\"degisti($event)\"\n            #file>\n          <label class=\"custom-file-label\" for=\"customFile\">Dosya Seçiniz</label>\n        </div>\n        <button nbButton status=\"info\" style=\"float:right\" class=\"mt-3\">Güncelle</button>\n      </form>\n    </nb-card-body>\n  </nb-card>\n</ng-template>"
 
 /***/ }),
 
@@ -351,6 +351,7 @@ var DashboardComponent = /** @class */ (function () {
         this.hasIcon = true;
         this.position = _nebular_theme__WEBPACK_IMPORTED_MODULE_3__["NbGlobalPhysicalPosition"].TOP_RIGHT;
         this.preventDuplicates = false;
+        this.loading = true;
         this.user = this.authHelper.userActor;
         this.header = this.formBuilder.group({
             message: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
@@ -388,6 +389,7 @@ var DashboardComponent = /** @class */ (function () {
                     _this.headerSrc = data;
                     if (_this.videoplayer) {
                         _this.videoplayer.nativeElement.load();
+                        _this.loading = false;
                     }
                 });
                 return [2 /*return*/];
@@ -434,7 +436,7 @@ var DashboardComponent = /** @class */ (function () {
         fileType = String(selectedFile.type);
         fileTypeSplit = fileType.split("/")[0];
         urlType = "video";
-        var uploadReq = new _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpRequest"]('POST', "http://localhost:60181/api/video/adminPanel/1", formData, {
+        var uploadReq = new _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpRequest"]('POST', "/api/video/adminPanel/1", formData, {
             reportProgress: true
         });
         this.http.request(uploadReq).subscribe(function (event) {
@@ -925,11 +927,12 @@ var PagesComponent = /** @class */ (function () {
                     icon: 'nb-home',
                     link: '/pages/dashboard',
                     home: true,
-                }, {
-                    title: 'Raporlarım',
-                    icon: 'nb-shuffle',
-                    link: '/pages/rapor',
                 });
+                // , {
+                //   title: 'Raporlarım',
+                //   icon: 'nb-shuffle',
+                //   link: '/pages/rapor',
+                // })
             }
         }
     }

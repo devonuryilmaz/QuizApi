@@ -738,9 +738,16 @@ var GazeSeviyeComponent = /** @class */ (function () {
         });
     };
     GazeSeviyeComponent.prototype.getByOturumAdiFetchId = function (name) {
-        var o = this.oturumlar.find(function (o) { return o["oturumAdi"] == name; });
-        var id = o["oturumID"];
-        return id;
+        var o;
+        var id;
+        try {
+            o = this.oturumlar.find(function (o) { return o["oturumAdi"] == name; });
+            id = o["oturumID"];
+            return id;
+        }
+        catch (_a) {
+            return 0;
+        }
     };
     GazeSeviyeComponent.prototype.onCreateConfirm = function (event) {
         if (event.newData["aktif"] == "Aktif") {

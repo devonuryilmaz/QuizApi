@@ -398,9 +398,16 @@ var AtifSeviyeComponent = /** @class */ (function () {
         });
     };
     AtifSeviyeComponent.prototype.getByOturumAdiFetchId = function (name) {
-        var o = this.oturumlar.find(function (o) { return o["oturumAdi"] == name; });
-        var id = o["oturumID"];
-        return id;
+        var o;
+        var id;
+        try {
+            o = this.oturumlar.find(function (o) { return o["oturumAdi"] == name; });
+            id = o["oturumID"];
+            return id;
+        }
+        catch (_a) {
+            return 0;
+        }
     };
     AtifSeviyeComponent.prototype.getOturumAll = function () {
         var _this = this;

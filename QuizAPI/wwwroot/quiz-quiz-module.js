@@ -133,7 +133,7 @@ var KullaniciRapor = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-4\"  *ngFor=\"let kategori of kategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n        <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n          <h5 style=\"color:black;\">            \n            {{kategori.kategoriAdi}}\n            </h5>\n        </div>\n        <div class=\"card-body\">\n          <p style=\"color:black\">{{kategori.aciklama}}</p>\n          <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n        </div>\n        <div class=\"card-footer\">\n          <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n          \n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>{{kategoriAdi}}</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                  <source src=\"{{kategori.url}}\">\n                  Your browser does not support the video tag.\n                </video> \n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n              <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" >Seviyeleri Göster</button>\n              <button style=\"float:right\" nbButton (click)=\"ref.close()\" >Kapat</button>\n            </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"open(dialog,kategori)\" status=\"success\">Kategori Önizleme</button>\n\n\n        </div>\n      </div>\n  </div>\n\n\n\n  <div class=\"col-md-4\"  *ngFor=\"let kategori of atifKategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n        <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n          <h5 style=\"color:black;\">            \n           Atıf\n            </h5>\n        </div>\n        <div class=\"card-body\">\n          <p style=\"color:black\">{{kategori.aciklama}}</p>\n          <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n        </div>\n        <div class=\"card-footer\">\n          <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n          \n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>Atıf</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n                <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                  <source src=\"{{kategori.videoUrl}}\">\n                  Your browser does not support the video tag.\n                </video> \n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n              <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../atif-seviyeler/',kategori.id]\" >Seviyeleri Göster</button>\n              <button style=\"float:right\" nbButton (click)=\"ref.close()\" >Kapat</button>\n            </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"openCustom(dialog)\" status=\"success\">Kategori Önizleme</button>\n\n\n        </div>\n      </div>\n  </div>\n\n\n\n\n  <div class=\"col-md-4\"  *ngFor=\"let kategori of gazeCastKategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n        <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n          <h5 style=\"color:black;\">            \n            Bakış Biçimlendirme\n            </h5>\n        </div>\n        <div class=\"card-body\">\n          <p style=\"color:black\">{{kategori.aciklama}}</p>\n          <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n        </div>\n        <div class=\"card-footer\">\n          <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n          \n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>Bakış Biçimlendirme</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.videoUrl}}\">\n                Your browser does not support the video tag.\n              </video> \n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n              <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../gazecast-seviyeler/',kategori.id]\" >Seviyeleri Göster</button>\n              <button style=\"float:right\" nbButton (click)=\"ref.close()\" >Kapat</button>\n            </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"openCustom(dialog)\" status=\"success\">Kategori Önizleme</button>\n\n\n        </div>\n      </div>\n  </div>\n\n\n  <div class=\"col-md-4\"  *ngFor=\"let kategori of facetoFaceKategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n        <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n          <h5 style=\"color:black;\">            \n            Gerçeklerle Yüzleşme\n            </h5>\n        </div>\n        <div class=\"card-body\">\n          <p style=\"color:black\">{{kategori.aciklama}}</p>\n          <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n        </div>\n        <div class=\"card-footer\">\n          <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n          \n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>Gerçeklerle Yüzleşme</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.videoUrl}}\">\n                Your browser does not support the video tag.\n              </video> \n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n              <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../facetofact-seviyeler/',kategori.id]\" >Seviyeleri Göster</button>\n              <button style=\"float:right\" nbButton (click)=\"ref.close()\" >Kapat</button>\n            </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"openCustom(dialog)\" status=\"success\">Kategori Önizleme</button>\n\n\n        </div>\n      </div>\n  </div>\n\n\n\n\n  \n</div>\n"
+module.exports = "<div class=\"row\">\n  <div class=\"col-md-4\" *ngFor=\"let kategori of kategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n      <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n        <h5 style=\"color:black;\">\n          {{kategori.kategoriAdi}}\n        </h5>\n      </div>\n      <div class=\"card-body\">\n        <p style=\"color:black\">{{kategori.aciklama}}</p>\n        <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n      </div>\n      <div class=\"card-footer\">\n        <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n\n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>{{kategoriAdi}}</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video>\n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n                <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../seviyeler/',kategori.kategoriID]\">Seviyeleri\n                  Göster</button>\n                <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n              </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"open(dialog,kategori)\" status=\"success\">Kategori Önizleme</button>\n\n\n      </div>\n    </div>\n  </div>\n\n\n\n  <div class=\"col-md-4\" *ngFor=\"let kategori of atifKategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n      <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n        <h5 style=\"color:black;\">\n          Atıf\n        </h5>\n      </div>\n      <div class=\"card-body\">\n        <p style=\"color:black\">{{kategori.aciklama}}</p>\n        <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n      </div>\n      <div class=\"card-footer\">\n        <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n\n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>Atıf</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.videoUrl}}\">\n                Your browser does not support the video tag.\n              </video>\n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n                <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../atif-seviyeler/',kategori.id]\">Seviyeleri\n                  Göster</button>\n                <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n              </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"openCustom(dialog)\" status=\"success\">Kategori Önizleme</button>\n\n\n      </div>\n    </div>\n  </div>\n\n\n\n\n  <div class=\"col-md-4\" *ngFor=\"let kategori of gazeCastKategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n      <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n        <h5 style=\"color:black;\">\n          Bakış Biçimlendirme\n        </h5>\n      </div>\n      <div class=\"card-body\">\n        <p style=\"color:black\">{{kategori.aciklama}}</p>\n        <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n      </div>\n      <div class=\"card-footer\">\n        <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n\n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>Bakış Biçimlendirme</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.videoUrl}}\">\n                Your browser does not support the video tag.\n              </video>\n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n                <button nbButton (click)=\"ref.close()\" [routerLink]=\"['../gazecast-seviyeler/',kategori.id]\">Seviyeleri\n                  Göster</button>\n                <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n              </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"openCustom(dialog)\" status=\"success\">Kategori Önizleme</button>\n\n\n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"col-md-4\" *ngFor=\"let kategori of facetoFaceKategoriler\">\n    <div class=\"card text-center\" style=\"background-color:whitesmoke;margin-bottom: 1rem\">\n      <div class=\"card-header\" style=\"color:black; text-transform:uppercase; \">\n        <h5 style=\"color:black;\">\n          Gerçeklerle Yüzleşme\n        </h5>\n      </div>\n      <div class=\"card-body\">\n        <p style=\"color:black\">{{kategori.aciklama}}</p>\n        <!--<iframe src=\"http://www.youtube.com/embed/W7qWa52k-nE\" height=\"300px;\" frameborder=\"0\" allowfullscreen></iframe>-->\n      </div>\n      <div class=\"card-footer\">\n        <!--  <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\" type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n          <button (click)=\"openWindow(kategori)\" status=\"success\" nbButton>Kategoriyi Göster</button>\n            <ng-template #contentTemplate>\n            <p>{{kategori.url}}</p>\n            <div class=\"row\">\n            <video width=\"50%\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.url}}\">\n                Your browser does not support the video tag.\n              </video> \n            </div>\n          <button  [routerLink]=\"['../seviyeler/',kategori.kategoriID]\"  type=\"button\" class=\"btn btn-success\">Seviyeleri Göster</button>\n        </ng-template>\n-->\n\n        <ng-template #dialog let-data let-ref=\"dialogRef\">\n          <nb-card size=\"large\">\n            <nb-card-header>Gerçeklerle Yüzleşme</nb-card-header>\n            <nb-card-body style=\"text-align:center\">\n              <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                <source src=\"{{kategori.videoUrl}}\">\n                Your browser does not support the video tag.\n              </video>\n            </nb-card-body>\n            <nb-card-footer>\n              <div>\n                <button nbButton (click)=\"ref.close()\"\n                  [routerLink]=\"['../facetofact-seviyeler/',kategori.id]\">Seviyeleri Göster</button>\n                <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n              </div>\n            </nb-card-footer>\n          </nb-card>\n        </ng-template>\n        <button nbButton (click)=\"openCustom(dialog)\" status=\"success\">Kategori Önizleme</button>\n\n\n      </div>\n    </div>\n  </div>\n\n\n\n\n\n</div>"
 
 /***/ }),
 
@@ -287,7 +287,7 @@ var KateorilerPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nb-card status=\"success\">\n  <nb-card-header style=\"color:black; text-transform:uppercase;\">{{oturum?.oturumAdi}}</nb-card-header>\n  <nb-card-body [nbSpinner]=\"loading\" nbSpinnerStatus=\"success\" nbSpinnerMessage=\"Yükleniyor...\">\n    <div class=\"row\">\n      <div *ngFor=\"let seviye of seviyeler\" class=\"col-md-3\">\n        <nb-card status=\"warning\" card-border-color=\"#000000\" style=\"border:1px #00000038 solid !important\">\n          <nb-card-header style=\"color:black; text-transform:uppercase;\">{{seviye?.seviyeNumarasi}}</nb-card-header>\n          <nb-card-body style=\"text-align: center\">\n\n            <ng-template #dialog let-data let-ref=\"dialogRef\">\n              <nb-card size=\"large\">\n                <nb-card-header style=\"text-transform: uppercase;\">{{seviyeAdi}}</nb-card-header>\n                <nb-card-body style=\"text-align:center\">\n                  <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                    <source [src]=\"kategoriUrl\">\n                    Your browser does not support the video tag.\n                  </video>\n                </nb-card-body>\n                <nb-card-footer>\n                  <div>\n                    <button nbButton (click)=\"start(seviye,ref)\">BAŞLA</button>\n                    <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n                  </div>\n                </nb-card-footer>\n              </nb-card>\n            </ng-template>\n\n            <button (click)=\"open(dialog,seviye)\" type=\"button\" class=\"btn btn-success\">Seviyeyi\n              Göster</button>\n          </nb-card-body>\n        </nb-card>\n      </div>\n    </div>\n  </nb-card-body>\n</nb-card>"
+module.exports = "<nb-card status=\"success\" *ngIf=\"isUser\">\n  <nb-card-header style=\"color:black; text-transform:uppercase;\">{{oturum?.oturumAdi}}</nb-card-header>\n  <nb-card-body [nbSpinner]=\"loading\" nbSpinnerStatus=\"success\" nbSpinnerMessage=\"Yükleniyor...\">\n    <div class=\"row\">\n      <div *ngFor=\"let seviye of seviyeler\" class=\"col-md-3\">\n        <nb-card status=\"warning\" card-border-color=\"#000000\" style=\"border:1px #00000038 solid !important\">\n          <nb-card-header style=\"color:black; text-transform:uppercase;\">{{seviye?.seviyeNumarasi}}</nb-card-header>\n          <nb-card-body style=\"text-align: center\">\n            <p>{{seviye.kategoriAciklama}}</p>\n            <ng-template #dialog let-data let-ref=\"dialogRef\">\n              <nb-card size=\"large\">\n                <nb-card-header style=\"text-transform: uppercase;\">{{seviyeAdi}}</nb-card-header>\n                <nb-card-body style=\"text-align:center\">\n                  <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                    <source [src]=\"kategoriUrl\">\n                    Your browser does not support the video tag.\n                  </video>\n                </nb-card-body>\n                <nb-card-footer>\n                  <div>\n                    <button nbButton (click)=\"start(seviye,ref)\">BAŞLA</button>\n                    <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n                  </div>\n                </nb-card-footer>\n              </nb-card>\n            </ng-template>\n          </nb-card-body>\n\n          <nb-card-footer>\n            <button (click)=\"open(dialog,seviye)\" type=\"button\" class=\"btn btn-success\">Seviyeyi\n              Göster</button>\n          </nb-card-footer>\n        </nb-card>\n      </div>\n    </div>\n  </nb-card-body>\n</nb-card>\n\n<div *ngIf=\"isAdmin\" class=\"col-md-12\">\n  <nb-card status=\"success\" *ngFor=\"let oturum of oturumlar\">\n    <nb-card-header style=\"color:black; text-transform:uppercase;\">{{oturum?.oturumAdi}}</nb-card-header>\n    <nb-card-body [nbSpinner]=\"loading\" nbSpinnerStatus=\"success\" nbSpinnerMessage=\"Yükleniyor...\">\n      <div class=\"row\">\n        <div *ngFor=\"let seviye of oturum.seviyeler\" class=\"col-md-3\">\n          <nb-card status=\"warning\" card-border-color=\"#000000\" style=\"border:1px #00000038 solid !important\">\n            <nb-card-header style=\"color:black; text-transform:uppercase;\">{{seviye?.seviyeNumarasi}}</nb-card-header>\n            <nb-card-body style=\"text-align: center\">\n              <p>{{seviye.kategoriAciklama}}</p>\n              <ng-template #dialog let-data let-ref=\"dialogRef\">\n                <nb-card size=\"large\">\n                  <nb-card-header style=\"text-transform: uppercase;\">{{seviyeAdi}}</nb-card-header>\n                  <nb-card-body style=\"text-align:center\">\n                    <video width=\"700px\" height=\"400px\" style=\"margin: auto\" controls>\n                      <source [src]=\"kategoriUrl\">\n                      Your browser does not support the video tag.\n                    </video>\n                  </nb-card-body>\n                  <nb-card-footer>\n                    <div>\n                      <button nbButton (click)=\"start(seviye,ref)\">BAŞLA</button>\n                      <button style=\"float:right\" nbButton (click)=\"ref.close()\">Kapat</button>\n                    </div>\n                  </nb-card-footer>\n                </nb-card>\n              </ng-template>\n            </nb-card-body>\n            <nb-card-footer>\n              <button (click)=\"open(dialog,seviye)\" type=\"button\" class=\"btn btn-success\">Seviyeyi\n                Göster</button>\n            </nb-card-footer>\n          </nb-card>\n        </div>\n      </div>\n    </nb-card-body>\n  </nb-card>\n</div>"
 
 /***/ }),
 
@@ -398,30 +398,47 @@ var OturumPageComponent = /** @class */ (function () {
         this.loading = true;
     }
     OturumPageComponent.prototype.ngOnInit = function () {
+        this.isAdmin = this.authHelper.userActor;
+        this.isUser = !this.isAdmin;
+        console.log("admin", this.isAdmin);
         this.getOturum(this.authHelper.userId);
     };
     OturumPageComponent.prototype.getOturum = function (id) {
         var _this = this;
-        this.oturumService.getKullaniciOturum(id).subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.oturumId = data["oturumID"];
-                        this.oturum = data;
-                        return [4 /*yield*/, this.getSeviyeler(this.oturumId)];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
-            });
-        }); });
+        if (!this.isAdmin) {
+            this.oturumService.getKullaniciOturum(id).subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    this.oturumId = data["oturumID"];
+                    this.oturum = data;
+                    this.getSeviyeler(this.oturumId, false, null);
+                    return [2 /*return*/];
+                });
+            }); });
+        }
+        else {
+            this.oturumService.getOturumlar().subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                var _this = this;
+                return __generator(this, function (_a) {
+                    this.oturumlar = data;
+                    data.forEach(function (o) { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            this.oturumId = o["oturumID"];
+                            this.getSeviyeler(this.oturumId, true, o);
+                            return [2 /*return*/];
+                        });
+                    }); });
+                    return [2 /*return*/];
+                });
+            }); });
+        }
     };
     OturumPageComponent.prototype.open = function (dialog, seviye) {
         var _this = this;
         this.seviyeAdi = seviye["seviyeNumarasi"];
+        //this.sırala(false, this.oturum)
         if (seviye["isAtif"] == true) {
             this.kategoriService.getAtifKategoriService(false).subscribe(function (resp) {
-                console.log(resp[0]);
+                //console.log(resp[0])
                 _this.kategoriUrl = resp[0]["videoUrl"].slice(1, resp[0]["videoUrl"].length);
             }, function (error) { }, function () {
                 _this.dialogService.open(dialog);
@@ -429,72 +446,86 @@ var OturumPageComponent = /** @class */ (function () {
         }
         else if (seviye["isGazeCast"] == true) {
             this.kategoriService.getGazeKategoriService(false).subscribe(function (resp) {
-                console.log(resp[0]);
+                //console.log(resp[0]);
                 _this.kategoriUrl = resp[0]["videoUrl"].slice(1, resp[0]["videoUrl"].length);
-                console.log(_this.kategoriUrl);
+                //console.log(this.kategoriUrl);
             }, function (error) { }, function () {
                 _this.dialogService.open(dialog);
             });
         }
         else if (seviye["isFaceToFace"] == true) {
             this.kategoriService.getFacetofaceKategoriService(false).subscribe(function (resp) {
-                console.log(resp[0]);
+                //console.log(resp[0]);
                 _this.kategoriUrl = resp[0]["videoUrl"].slice(1, resp[0]["videoUrl"].length);
-                console.log(_this.kategoriUrl);
+                //console.log(this.kategoriUrl);
             }, function (error) { }, function () {
                 _this.dialogService.open(dialog);
             });
         }
         else {
             this.kategoriService.getKategoriById(seviye["kategoriID"]).subscribe(function (resp) {
-                console.log(resp);
+                //console.log(resp);
                 _this.kategoriUrl = resp["url"].slice(1, resp["url"].length);
             }, function (error) { }, function () {
                 _this.dialogService.open(dialog);
             });
         }
     };
-    OturumPageComponent.prototype.getSeviyeler = function (id) {
+    OturumPageComponent.prototype.getSeviyeler = function (id, isAdmin, oturum) {
         var _this = this;
         this.seviyeService.getOturumSeviye(id).subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        this.seviyeler = data;
-                        return [4 /*yield*/, this.getAtifSeviye(id)];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, this.getFaceSeviye(id)];
-                    case 2:
-                        _a.sent();
-                        return [4 /*yield*/, this.getGazeSeviye(id)];
-                    case 3:
-                        _a.sent();
-                        return [2 /*return*/];
+                data.forEach(function (sev) {
+                    _this.kategoriService.getKategoriById(sev["kategoriID"]).subscribe(function (resp) {
+                        console.log(resp);
+                        sev.kategoriAciklama = resp["aciklama"];
+                    });
+                });
+                if (!isAdmin) {
+                    console.log("burda");
+                    this.seviyeler = data;
+                    this.getAtifSeviye(id, false, null);
+                    this.getFaceSeviye(id, false, null);
+                    this.getGazeSeviye(id, false, null);
                 }
+                else {
+                    oturum.seviyeler = data;
+                    this.getAtifSeviye(id, true, oturum);
+                    this.getFaceSeviye(id, true, oturum);
+                    this.getGazeSeviye(id, true, oturum);
+                }
+                return [2 /*return*/];
             });
         }); });
     };
-    OturumPageComponent.prototype.sırala = function () {
+    OturumPageComponent.prototype.sırala = function (isAdmin, oturum) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.seviyeler.sort(function (a, b) { return a["oturumSirasi"] - b["oturumSirasi"]; })];
-                    case 1:
-                        _a.sent();
-                        console.log("sev", this.seviyeler);
-                        this.loading = false;
-                        return [2 /*return*/];
+                if (!isAdmin) {
+                    console.log("seviye", this.seviyeler);
+                    this.seviyeler.sort(function (a, b) { return a["oturumSirasi"] - b["oturumSirasi"]; });
+                    this.loading = false;
                 }
+                else {
+                    console.log("oturum");
+                    oturum.seviyeler.sort(function (a, b) { return a["oturumSirasi"] - b["oturumSirasi"]; });
+                    this.loading = false;
+                }
+                return [2 /*return*/];
             });
         });
     };
-    OturumPageComponent.prototype.getAtifSeviye = function (id) {
+    OturumPageComponent.prototype.getAtifSeviye = function (id, isAdmin, oturum) {
         var _this = this;
         this.seviyeService.getAtifOturum(id).subscribe(function (data) {
             data.forEach(function (atif) {
                 var seviye = new _models_seviye__WEBPACK_IMPORTED_MODULE_4__["Seviye"]();
                 seviye["seviyeID"] = atif["id"];
+                _this.kategoriService.getAtifKategoriService(true).subscribe(function (resp) {
+                    console.log(resp);
+                    seviye.kategoriAciklama = resp[0]["aciklama"];
+                });
                 seviye["isAtif"] = true;
                 seviye["isAktif"] = atif["isAktif"];
                 seviye["siraNumarasi"] = atif["sıraNumara"];
@@ -502,16 +533,25 @@ var OturumPageComponent = /** @class */ (function () {
                 seviye["aktif"] = atif["aktif"];
                 seviye["oturumID"] = atif["oturumID"];
                 seviye["oturumSirasi"] = atif["oturumSirasi"];
-                _this.seviyeler.push(seviye);
+                if (isAdmin == false) {
+                    _this.seviyeler.push(seviye);
+                }
+                else {
+                    oturum.seviyeler.push(seviye);
+                }
             });
         });
     };
-    OturumPageComponent.prototype.getFaceSeviye = function (id) {
+    OturumPageComponent.prototype.getFaceSeviye = function (id, isAdmin, oturum) {
         var _this = this;
         this.seviyeService.getFaceOturum(id).subscribe(function (data) {
             data.forEach(function (face) {
                 var seviye = new _models_seviye__WEBPACK_IMPORTED_MODULE_4__["Seviye"]();
                 seviye["seviyeID"] = face["id"];
+                _this.kategoriService.getFacetofaceKategoriService(true).subscribe(function (resp) {
+                    console.log(resp);
+                    seviye.kategoriAciklama = resp[0]["aciklama"];
+                });
                 seviye["isFaceToFace"] = true;
                 seviye["isAktif"] = face["isAktif"];
                 seviye["siraNumarasi"] = face["sıraNumara"];
@@ -519,37 +559,57 @@ var OturumPageComponent = /** @class */ (function () {
                 seviye["aktif"] = face["aktif"];
                 seviye["oturumID"] = face["oturumID"];
                 seviye["oturumSirasi"] = face["oturumSirasi"];
-                _this.seviyeler.push(seviye);
+                if (isAdmin == false) {
+                    console.log("admin yanlış");
+                    _this.seviyeler.push(seviye);
+                }
+                else {
+                    oturum.seviyeler.push(seviye);
+                }
             });
         });
     };
-    OturumPageComponent.prototype.getGazeSeviye = function (id) {
+    OturumPageComponent.prototype.getGazeSeviye = function (id, isAdmin, oturum) {
         var _this = this;
         this.seviyeService.getGazeOturum(id).subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        data.forEach(function (gaze) {
-                            var seviye = new _models_seviye__WEBPACK_IMPORTED_MODULE_4__["Seviye"]();
-                            seviye["seviyeID"] = gaze["id"];
-                            seviye["isGazeCast"] = true;
-                            seviye["isAktif"] = gaze["isAktif"];
-                            seviye["siraNumarasi"] = gaze["sıraNumara"];
-                            seviye["seviyeNumarasi"] = gaze["aciklama"];
-                            seviye["aktif"] = gaze["aktif"];
-                            seviye["oturumID"] = gaze["oturumID"];
-                            seviye["oturumSirasi"] = gaze["oturumSirasi"];
-                            _this.seviyeler.push(seviye);
-                        }), function (error) { },
-                            function () { };
-                        return [4 /*yield*/, this.sırala()];
-                    case 1:
-                        _a.sent();
-                        return [2 /*return*/];
-                }
+                data.forEach(function (gaze) {
+                    var seviye = new _models_seviye__WEBPACK_IMPORTED_MODULE_4__["Seviye"]();
+                    seviye["seviyeID"] = gaze["id"];
+                    _this.kategoriService.getGazeKategoriService(true).subscribe(function (resp) {
+                        console.log(resp);
+                        seviye.kategoriAciklama = resp[0]["aciklama"];
+                    });
+                    seviye["isGazeCast"] = true;
+                    seviye["isAktif"] = gaze["isAktif"];
+                    seviye["siraNumarasi"] = gaze["sıraNumara"];
+                    seviye["seviyeNumarasi"] = gaze["aciklama"];
+                    seviye["aktif"] = gaze["aktif"];
+                    seviye["oturumID"] = gaze["oturumID"];
+                    seviye["oturumSirasi"] = gaze["oturumSirasi"];
+                    if (isAdmin == false) {
+                        _this.seviyeler.push(seviye);
+                    }
+                    else {
+                        oturum.seviyeler.push(seviye);
+                    }
+                }), function (error) { },
+                    function () {
+                    };
+                return [2 /*return*/];
             });
         }); });
+        if (isAdmin == false) {
+            sirala(false, null, this.seviyeler);
+            this.loading = false;
+            //this.sırala(false, null);
+        }
+        else {
+            sirala(true, oturum, null);
+            this.loading = false;
+            //this.sırala(true, oturum);
+        }
     };
     OturumPageComponent.prototype.start = function (seviye, ref) {
         ref.close();
@@ -602,6 +662,18 @@ var OturumPageComponent = /** @class */ (function () {
     return OturumPageComponent;
 }());
 
+function sirala(isAdmin, oturum, seviyeler) {
+    setTimeout(function () {
+        if (!isAdmin) {
+            console.log("seviye", seviyeler);
+            seviyeler.sort(function (a, b) { return a["oturumSirasi"] - b["oturumSirasi"]; });
+        }
+        else {
+            console.log("oturum");
+            oturum.seviyeler.sort(function (a, b) { return a["oturumSirasi"] - b["oturumSirasi"]; });
+        }
+    }, 350);
+}
 
 
 /***/ }),
@@ -1787,7 +1859,11 @@ var SeviyelerAtifComponent = /** @class */ (function () {
         rapor.SeviyeID = seviye.id;
         rapor["oturumID"] = seviye.oturumID;
         rapor["oturumSirasi"] = seviye["oturumSirasi"];
-        var suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+        var suankiSira = 0;
+        try {
+            suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+        }
+        catch (_a) { }
         var oncekiSira = 0;
         console.log('rapor', rapor);
         var userRol = this.authhElper.userActor;
@@ -2059,9 +2135,13 @@ var SeviyelerFacetofactComponent = /** @class */ (function () {
         rapor.seviyeID = seviye.id;
         rapor["oturumID"] = seviye.oturumID;
         rapor["oturumSirasi"] = seviye["oturumSirasi"];
-        var suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+        var suankiSira = 0;
+        try {
+            suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+        }
+        catch (_a) { }
         var oncekiSira = 0;
-        console.log("rapor", rapor.seviyeID);
+        console.log("rapor", rapor);
         var userRole = this.authhElper.userActor;
         if (!userRole) {
             this.seviyeService.kullaniciRaporKontrol(rapor).subscribe(function (isFind) { return __awaiter(_this, void 0, void 0, function () {
@@ -2347,7 +2427,11 @@ var SeviyelerGazecastComponent = /** @class */ (function () {
         rapor.seviyeID = seviye.id;
         rapor["oturumID"] = seviye.oturumID;
         rapor["oturumSirasi"] = seviye["oturumSirasi"];
-        var suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+        var suankiSira = 0;
+        try {
+            suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+        }
+        catch (_a) { }
         var oncekiSira = 0;
         var userRole = this.authhElper.userActor;
         if (!userRole) {
@@ -2361,7 +2445,7 @@ var SeviyelerGazecastComponent = /** @class */ (function () {
                             this.seviyeService.kullaniciCompleteKontrol(rapor).subscribe(function (complete) {
                                 console.log("rapor", rapor);
                                 if (!complete["isTamamlandi"]) {
-                                    _this.router.navigateByUrl("pages/quiz/sorular/" + seviye.seviyeID);
+                                    _this.router.navigateByUrl("pages/quiz/gazecast-sorular/" + seviye.seviyeID);
                                 }
                                 else {
                                     _this.warningToastMessage("Seviye Uyarısı", "Bu seviye tamamlanmıştır. Tekrar girilemez.");
@@ -2376,7 +2460,11 @@ var SeviyelerGazecastComponent = /** @class */ (function () {
                             if (!(rapor["oturumSirasi"] > 1)) return [3 /*break*/, 3];
                             return [4 /*yield*/, this.seviyeService.sonAtifRapor(seviye.oturumID, this.authhElper.userId).subscribe(function (rp) { return __awaiter(_this, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
-                                        oncekiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
+                                        try {
+                                            oncekiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
+                                        }
+                                        catch (_b) {
+                                        }
                                         if (rp && rp["isTamamlandi"]) {
                                             atifVar_1 = true;
                                             if ((suankiSira - oncekiSira) == 1) {
@@ -2395,7 +2483,8 @@ var SeviyelerGazecastComponent = /** @class */ (function () {
                                                 return [4 /*yield*/, this.seviyeService.sonRapor(seviye.oturumID, this.authhElper.userId).subscribe(function (rp) { return __awaiter(_this, void 0, void 0, function () {
                                                         return __generator(this, function (_a) {
                                                             console.log("rp", rp);
-                                                            oncekiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
+                                                            oncekiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] === rp["oturumSirasi"]; }).valueOf();
+                                                            console.log("rp", suankiSira);
                                                             if (rp && rp["isTamamlandi"]) {
                                                                 atifVar_1 = true;
                                                                 if ((suankiSira - oncekiSira) == 1) {
@@ -2628,6 +2717,7 @@ var SeviyelerPageComponent = /** @class */ (function () {
     };
     SeviyelerPageComponent.prototype.start = function (seviye, seviyeOturum) {
         var _this = this;
+        console.log("gelen Seviye", seviye);
         var rapor = new _models_KullaniciRapor__WEBPACK_IMPORTED_MODULE_4__["KullaniciRapor"]();
         rapor.isKategoriCustom = false;
         rapor.kullaniciID = this.authhElper.userId;
@@ -2635,10 +2725,10 @@ var SeviyelerPageComponent = /** @class */ (function () {
         rapor.seviyeID = seviye.seviyeID;
         rapor["oturumID"] = seviye.oturumID;
         rapor["oturumSirasi"] = seviye["oturumSirasi"];
-        var suankiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
-        var oncekiSira = 0;
         //console.log("rapor", rapor.seviyeID)
         if (!this.authhElper.userActor) {
+            var suankiSira_1 = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == seviye["oturumSirasi"]; }).valueOf();
+            var oncekiSira_1 = 0;
             this.seviyeService.kullaniciRaporKontrol(rapor).subscribe(function (isFind) { return __awaiter(_this, void 0, void 0, function () {
                 var atifVar_1, girilebilir_1;
                 var _this = this;
@@ -2664,9 +2754,9 @@ var SeviyelerPageComponent = /** @class */ (function () {
                             if (!(rapor["oturumSirasi"] > 1)) return [3 /*break*/, 3];
                             return [4 /*yield*/, this.seviyeService.sonAtifRapor(seviye.oturumID, this.authhElper.userId).subscribe(function (rp) { return __awaiter(_this, void 0, void 0, function () {
                                     return __generator(this, function (_a) {
-                                        oncekiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
+                                        oncekiSira_1 = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
                                         if (rp && rp["isTamamlandi"]) {
-                                            if ((suankiSira - oncekiSira) == 1) {
+                                            if ((suankiSira_1 - oncekiSira_1) == 1) {
                                                 atifVar_1 = true;
                                                 girilebilir_1 = true;
                                                 this.localStorageEkle(rapor, seviye);
@@ -2684,11 +2774,11 @@ var SeviyelerPageComponent = /** @class */ (function () {
                                                 if (!!atifVar_1) return [3 /*break*/, 2];
                                                 return [4 /*yield*/, this.seviyeService.sonRapor(seviye.oturumID, this.authhElper.userId).subscribe(function (rp) { return __awaiter(_this, void 0, void 0, function () {
                                                         return __generator(this, function (_a) {
-                                                            oncekiSira = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
+                                                            oncekiSira_1 = seviyeOturum.findIndex(function (s) { return s["oturumSirasi"] == rp["oturumSirasi"]; }).valueOf();
                                                             console.log("rp", rp);
                                                             if (rp && rp["isTamamlandi"]) {
                                                                 atifVar_1 = true;
-                                                                if ((suankiSira - oncekiSira) == 1) {
+                                                                if ((suankiSira_1 - oncekiSira_1) == 1) {
                                                                     girilebilir_1 = true;
                                                                     this.localStorageEkle(rapor, seviye);
                                                                 }
@@ -2798,7 +2888,7 @@ var SeviyelerPageComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\n  .bos {}\n\n  .bos>>>nb-card {\n    background: none;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n\n  .hidden {\n    visibility: hidden;\n  }\n\n  .none {\n    display: none;\n  }\n</style>\n\n\n<div class=\"steppers-container row\">\n  <div class=\"col-md-12 col-lg-12 col-xxxl-12\">\n    <nb-card>\n      <nb-card-body>\n        <nb-card-body>\n          <label for=\"exampleInputEmail1\">İlerleme Durumu</label>\n          <nb-progress-bar [value]=\"status\" [displayValue]=\"true\" status=\"success\"></nb-progress-bar>\n        </nb-card-body>\n        <nb-stepper #stepper>\n          <div *ngIf=\"tema==1\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <nb-reveal-card #revealCard>\n                  <nb-card-front>\n                    <nb-card accent=\"success\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke\">\n                        <h3 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruIcerik}}\n                        </h3>\n                      </nb-card-body>\n                      <button nbButton style=\"border-radius:0% !important; color: black; font-size: 1.20rem;\"\n                        status=\"success\" (click)=\"soruGoster(revealCard)\">Soruyu Göster</button>\n                    </nb-card>\n                  </nb-card-front>\n                  <nb-card-back>\n                    <nb-card accent=\"primary\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke;\">\n                        <h1 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruCumlesi}}\n                        </h1>\n                      </nb-card-body>\n                      <button nbButton status=\"success\"\n                        style=\"border-radius:0% !important ;color: black; font-size: 1.20rem;\"\n                        (click)=\"soruGoster(revealCard)\">METİNİ GÖSTER</button>\n                    </nb-card>\n                  </nb-card-back>\n                </nb-reveal-card>\n                <div class=\"card-deck\">\n                  <nb-flip-card\n                    [ngClass]=\"{'col-md-4 col-sm-4':secenekler.length<=3,'col-md-3 col-sm-3':secenekler.length==4 ,'col-md-2 col-sm-2':secenekler.length>4 }\"\n                    class=\"bos card col-md-4\" style=\"text-align:center; border-radius: 5%;\" *ngFor=\"let s of secenekler\"\n                    [ngStyle]=\"sayiStyle\" #flipCard>\n                    <nb-card-front>\n                      <nb-card size=\"xsmall\">\n                        <div style=\"margin-top:3rem\">\n                          <h4 class=\"mt-3\" style=\"color:black; text-transform: uppercase;\">{{s.icerik}}</h4>\n                        </div>\n                        <div class=\"card-body\">\n                          <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"soruKontrol(stepper,s.isTrue,i,flipCard)\">Seç</button>\n                        </div>\n                      </nb-card>\n                    </nb-card-front>\n                    <nb-card-back>\n                      <nb-card style=\"align-items:center;\" size=\"xsmall\">\n                        <div *ngIf=\"s.isTrue==true; else yanlis\">\n                          <h3 style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                          <img width=\"50%\" src=\"../../../../assets/images/tick.png\">\n                          <div *ngIf='i != length-1; else son'>\n                            <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                          </div>\n                          <ng-template #son>\n                            <div>\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                            </div>\n                          </ng-template>\n                        </div>\n                        <ng-template #yanlis>\n                          <div>\n                            <h3 style=\"color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                            <img width=\"50%\"\n                              src=\"http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/256/Close-icon.png\">\n                            <div *ngIf=\"i != length-1; else son\">\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                            </div>\n                            <ng-template #son>\n                              <div>\n                                <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                  (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                              </div>\n                            </ng-template>\n                          </div>\n                        </ng-template>\n                      </nb-card>\n                    </nb-card-back>\n                  </nb-flip-card>\n                </div>\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==3\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div class=\"row justify-content-between\" *ngIf=\"secenekUzunluk>0;\">\n                  <div class=\"col-4\">\n                    <button #buton1 isTrue='secenekler[0][\"isTrue\"]'\n                      (click)='soruKontrol(stepper,secenekler[0][\"isTrue\"],i,null,buton1,null)' adi=\"sol\" nbButton\n                      size=\"large\" style=\"float:inline-start;border-radius: 50%;margin-top: 50%;font-size: xx-large\"\n                      [ngStyle]=\"butonStyle\"\n                      [style.background-color]='submitted? butonYak(secenekler[0][\"isTrue\"]) : \"#7659ff\"'>\n                      &lt; <br> {{secenekler[0][\"icerik\"]}}\n                    </button>\n                  </div>\n                  <div class=\"col-4\" [ngClass]=\"{'container':submitted}\">\n                    <div class=\"photoEdit\" style=\"text-align:center\">\n                      <h1\n                        style=\"font-size:3rem;position: absolute;color: red;text-transform: uppercase;margin-top: 50%;width: 90%; font-weight: 900\">\n                        {{emotionalFaceTrue}}</h1>\n                      <img *ngIf=\"emotionalFaceResim==true\" class=\"image\" style=\"margin:auto;width: 100%;\"\n                        src='{{soru.url}}'>\n                    </div>\n                  </div>\n                  <div class=\"col-4\">\n                    <button #buton2 adi='sag' isTrue='secenekler[1][\"isTrue\"]'\n                      (click)='soruKontrol(stepper,secenekler[1][\"isTrue\"],i,null,buton2,null)' nbButton\n                      [ngStyle]=\"butonStyle\" size=\"large\"\n                      style=\"float:right;border-radius: 50%;margin-top: 50%;font-size: xx-large\"\n                      [style.background-color]='submitted? butonYak(secenekler[1][\"isTrue\"]): \"#7659ff\"'>&gt; <br>\n                      {{secenekler[1][\"icerik\"]}}</button>\n                  </div>\n                  <div *ngIf=\"i != length-1 && submitted; \" class=\"col-md-12 mt-5 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                  </div>\n                  <div *ngIf=\"i == length-1 && submitted\" class=\"col-md-12 mt-5 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==2\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div class=\"row\" *ngIf=\"secenekUzunluk>0;\">\n                  <div *ngIf=\"(firstShowing || submitted ) && !dogruCevap && !ucuncuGosterim \"\n                    style=\"text-align:center; margin: auto\">\n                    <img style=\"margin: auto\" src='{{soru.url}}'>\n                  </div>\n                  <div *ngIf=\"secondShowing\" class=\"row\" style=\"text-align:center; margin: auto\">\n                    <div class=\"col-12 \" style=\"display: contents !important\"\n                      *ngIf=\"secenekler.length>=4; else secondTemplate\">\n                      <div class=\"col-md-3 mb-2\" [ngClass]=\"{'container':submitted}\"\n                        style=\"margin: auto;text-align:center;\" *ngFor=\"let sc of secenekler\">\n                        <div class=\"photoEdit\" #target\n                          [ngClass]=\"{'hidden': dogruCevap,'none':!dogruCevap && submitted}\">\n                          <input type=\"image\" (click)='soruKontrol(stepper,sc.isTrue,i,null,null,target)' class=\"image\"\n                            src='{{sc.url}}'>\n                          <div class=\"middle\">\n                            <div *ngIf=\"sc.isTrue && submitted\"><i class=\"ion-checkmark dogru\"\n                                (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                            <div *ngIf=\"!sc.isTrue && submitted\"><i class=\"ion-close-round yanlis\"\n                                (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <ng-template #secondTemplate>\n                      <div class=\"col-12\" style=\"display: contents !important\">\n                        <div class=\"col-md-4 mb-2\" [ngClass]=\"{'container':submitted}\"\n                          style=\"margin: auto;text-align:center\" *ngFor=\"let sc of secenekler\">\n                          <div class=\"photoEdit\" #target\n                            [ngClass]=\"{'hidden': dogruCevap,'none':!dogruCevap && submitted}\">\n                            <input type=\"image\" (click)='soruKontrol(stepper,sc.isTrue,i,null,null,target)'\n                              class=\"image\" src='{{sc.url}}'>\n                            <div class=\"middle\">\n                              <div *ngIf=\"sc.isTrue && submitted\"><i class=\"ion-checkmark dogru\"\n                                  (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                              <div *ngIf=\"!sc.isTrue && submitted\"><i class=\"ion-close-round yanlis\"\n                                  (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div *ngIf=\"ucuncuGosterim && !dogruCevap\" class=\"col-12\" style=\"display: contents !important\">\n                        <div class=\"photoEdit mb-2\">\n                          <img class=\"image\" style=\"width:200px\" [src]=\"soru.url\">\n                        </div>\n                        <div class=\"photoEdit mb-2\">\n                          <img class=\"image\" style=\"width:200px\" [src]=\"cevapSrc\">\n                        </div>\n                      </div>\n                    </ng-template>\n                  </div>\n                  <div *ngIf=\"i != length-1 && submitted && secondShowing; \" style=\"text-align:center\"\n                    class=\"col-md-12 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                  </div>\n                  <div *ngIf=\"i == length-1 && submitted && secondShowing\" style=\"text-align:center\"\n                    class=\"col-md-12 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==4\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div class=\"row\">\n                  <div *ngIf=\"sorufotogosterim\" class=\"col-md-12\" style=\"text-align:center\">\n                    <div *ngFor=\"let image of soruPhotos;\">\n                      <div *ngIf=\"image['visible'] && !fotoMu\">\n                        <video width=\"25%\" style=\"margin: auto\" muted autoplay (ended)=\"videoEnd()\">\n                          <source [src]=\"image.url\">\n                          Your browser does not support the video tag.\n                        </video>\n                      </div>\n                      <div *ngIf=\"image['visible'] && fotoMu\">\n                        <img width=\"25%\" style=\"margin: auto\" src=\"{{image.url}}\">\n                      </div>\n                    </div>\n                  </div>\n\n                  <div *ngIf=\"soruSecenekGosterim\" class=\"card-deck\">\n                    <div class=\"col-12\" style=\"display: contents !important\">\n                      <div\n                        [ngClass]=\"{'col-md-4 col-sm-4':soruPhotos.length<=3,'col-md-3 col-sm-3':soruPhotos.length==4 ,'col-md-2 col-sm-2':soruPhotos.length>6 }\"\n                        class=\"bos card\" style=\"text-align:center; border-radius: 5%;margin: auto;text-align:center;\"\n                        *ngFor=\"let s of soruPhotos\" [ngStyle]=\"sayiStyle\" #item>\n                        <nb-flip-card #flipCard>\n                          <nb-card-front>\n                            <nb-card size=\"xsmall\">\n                              <div style=\"margin-top:3rem\">\n                                <h4 class=\"mt-3\" style=\"color:black; text-transform: uppercase;\">{{s.secenekAciklama}}\n                                </h4>\n                              </div>\n                              <div class=\"card-body\">\n                                <button nbButton hero fullWidth status=\"success\"\n                                  style=\"font-size:larger; color:black;width: 60%;\"\n                                  (click)=\"EmotionReplayKontrol(stepper,i,item,s.secenekAciklama,s.sira,flipCard,cevap)\">Seç</button>\n                              </div>\n                            </nb-card>\n                          </nb-card-front>\n                          <nb-card-back>\n                            <nb-card style=\"align-items:center;\" size=\"xsmall\">\n                              <div>\n                                <h3 class=\"mt-2\" style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                                <img #cevap width=\"50%\" src=\"../../../../assets/images/tick.png\">\n                              </div>\n                            </nb-card>\n                          </nb-card-back>\n                        </nb-flip-card>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==5 \">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div *ngIf=\"faceReplayGoster\" class=\"col-md-12\" style=\"text-align:center\">\n                  <div *ngFor=\"let image of soruPhotos;\">\n                    <a *ngIf=\"image['visible']\"><img src='{{image.url}}'></a>\n                  </div>\n                </div>\n                <div *ngIf=\"faceReplayDagitim;\">\n                  <div class=\"row\" style=\"text-align:center; margin: auto\">\n                    <div class=\"col-md-3 mb-2\" *ngFor=\"let num of faceReplayNumbers\">\n                      <div *ngFor=\"let item of soruPhotos\">\n                        <input *ngIf=\"item.dagit==num\" type=\"image\" (click)=\"FaceReplaySoruKontrol(stepper,i,item.sira)\"\n                          width=\"75%\" [src]='item.url'>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n          </div>\n          <div *ngIf=\"tema==6\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <nb-reveal-card *ngIf=\"soru.soruTipi==2\" #revealCard>\n                  <nb-card-front>\n                    <nb-card accent=\"success\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke\">\n                        <h3 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruIcerik}}\n                        </h3>\n                      </nb-card-body>\n                      <button nbButton style=\"border-radius:0% !important; color: black; font-size: 1.20rem;\"\n                        status=\"success\" (click)=\"soruGoster(revealCard)\">Soruyu Göster</button>\n                    </nb-card>\n                  </nb-card-front>\n                  <nb-card-back>\n                    <nb-card accent=\"primary\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke;\">\n                        <h1 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruCumlesi}}\n                        </h1>\n                      </nb-card-body>\n                      <button nbButton status=\"success\"\n                        style=\"border-radius:0% !important ;color: black; font-size: 1.20rem;\"\n                        (click)=\"soruGoster(revealCard)\">METİNİ GÖSTER</button>\n                    </nb-card>\n                  </nb-card-back>\n                </nb-reveal-card>\n                <div *ngIf=\"soruSuresi>0 ; else soruFoto\">\n                  <div *ngIf=\"soru.soruTipi==1 && firstShowing\" style=\"text-align:center\">\n                    <img src=\"{{soru.url}}\" width=\"175px\" height=\"175px\">\n                  </div>\n                </div>\n                <ng-template #soruFoto>\n                  <div *ngIf=\"soru.soruTipi==1\" style=\"text-align:center\">\n                    <img src=\"{{soru.url}}\" width=\"175px\" height=\"175px\">\n                  </div>\n                </ng-template>\n                <div *ngIf=\"soru.soruTipi==3\" style=\"text-align:center\">\n                  <video width=\"25%\" style=\"margin: auto\" id={{i}} (ended)=\"customVideo(vide)\" muted autoplay #vide>\n                    <source [src]=\"soru.url\">\n                    Your browser does not support the video tag.\n                  </video>\n                </div>\n                <div class=\"card-deck\" *ngIf=\"secondShowing\">\n                  <nb-flip-card\n                    [ngClass]=\"{'col-md-4 col-sm-4':secenekler.length <=3,'col-md-3 col-sm-3':secenekler.length==4 ,'col-md-2 col-sm-2':secenekler.length>4 }\"\n                    class=\"bos card col-md-4\" style=\"text-align:center; border-radius: 5%;\" *ngFor=\"let s of secenekler\"\n                    [ngStyle]=\"sayiStyle\" #flipCard>\n                    <nb-card-front>\n                      <nb-card size=\"xsmall\">\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url ==null || s.url==''\">\n                          <h4 class=\"mt-3\" style=\"color:black; text-transform: uppercase;\">{{s.icerik}}</h4>\n                        </div>\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url !=null && s.url!=''\">\n                          <img src=\"{{s.url}}\" width=\"100px\" height=\"100px\">\n                        </div>\n                        <div class=\"card-body\">\n                          <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"soruKontrol(stepper,s.isTrue,i,flipCard)\">Seç</button>\n                        </div>\n                      </nb-card>\n                    </nb-card-front>\n                    <nb-card-back>\n                      <nb-card style=\"align-items:center;\" size=\"xsmall\">\n                        <div *ngIf=\"s.isTrue==true; else yanlis\">\n                          <h3 style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                          <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/tick.png\">\n                          <div *ngIf='i != length-1; else son'>\n                            <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                          </div>\n                          <ng-template #son>\n                            <div>\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                            </div>\n                          </ng-template>\n                        </div>\n                        <ng-template #yanlis>\n                          <div>\n                            <h3 style=\"color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                            <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/false.png\">\n                            <div *ngIf=\"i != length-1; else son\">\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                            </div>\n                            <ng-template #son>\n                              <div>\n                                <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                  (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                              </div>\n                            </ng-template>\n                          </div>\n                        </ng-template>\n                      </nb-card>\n                    </nb-card-back>\n                  </nb-flip-card>\n                </div>\n              </form>\n            </nb-step>\n          </div>\n          <div *ngIf=\"tema==7\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div *ngIf=\"firstShowing\" style=\"text-align:center; margin: auto\">\n                  <img src=\"{{soru.url}}\" width=\"175px\" height=\"175px\">\n                </div>\n                <div class=\"card-deck\" *ngIf=\"secondShowing\" #target\n                  [ngClass]=\"{'hidden': dogruCevap,'none':!dogruCevap && submitted}\">\n                  <nb-flip-card\n                    [ngClass]=\"{'col-md-4 col-sm-4':secenekler.length <=3,'col-md-3 col-sm-3':secenekler.length==4 ,'col-md-2 col-sm-2':secenekler.length>4 }\"\n                    class=\"bos card col-md-4\" style=\"text-align:center; border-radius: 5%;\" *ngFor=\"let s of secenekler\"\n                    [ngStyle]=\"sayiStyle\" #flipCard>\n                    <nb-card-front>\n                      <nb-card size=\"xsmall\">\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url ==null || s.url==''\">\n                          <h4 class=\"mt-3\" style=\"color:rgb(109, 100, 100); text-transform: uppercase;\">{{s.icerik}}\n                          </h4>\n                        </div>\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url !=null && s.url!=''\">\n                          <img src=\"{{s.url}}\" width=\"100px\" height=\"100px\">\n                        </div>\n                        <div class=\"card-body\">\n                          <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"soruKontrol(stepper,s.isTrue,i,flipCard,null,target)\">Seç</button>\n                        </div>\n                      </nb-card>\n                    </nb-card-front>\n                    <nb-card-back>\n                      <nb-card style=\"align-items:center;\" size=\"xsmall\">\n                        <div *ngIf=\"s.isTrue==true; else yanlis\">\n                          <h3 style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                          <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/tick.png\">\n                          <div *ngIf=\"i != length-1 && submitted && secondShowing; \" style=\"text-align:center\"\n                            class=\"col-md-12 row\">\n                            <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                          </div>\n                          <div *ngIf=\"i == length-1 && submitted && secondShowing\" style=\"text-align:center\"\n                            class=\"col-md-12 row\">\n                            <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                          </div>\n                        </div>\n                        <ng-template #yanlis>\n                          <div>\n                            <h3 style=\"color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                            <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/false.png\">\n                            <div *ngIf=\"i != length-1 && submitted && secondShowing; \" style=\"text-align:center\"\n                              class=\"col-md-12 row\">\n                              <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                            </div>\n                            <div *ngIf=\"i == length-1 && submitted && secondShowing\" style=\"text-align:center\"\n                              class=\"col-md-12 row\">\n                              <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                            </div>\n                          </div>\n                        </ng-template>\n                      </nb-card>\n                    </nb-card-back>\n                  </nb-flip-card>\n                </div>\n                <div *ngIf=\"ucuncuGosterim && !dogruCevap\" style=\"text-align: center;display: flex\">\n                  <div class=\"mb-2 col-4\">\n                    <img class=\"image\" style=\"width:200px;float: right\" src=\"{{soru.url}}\">\n                  </div>\n                  <div class=\"mb-2 col-4\">\n                    <nb-card accent=\"success\">\n                      <div>\n                        <h3 style=\"color:black;  text-transform: uppercase;\">{{ cevapSrc }}</h3>\n                        <img width=\"125px\" src=\"../../../../assets/images/false.png\">\n                        <div *ngIf=\"i != length-1; else son\">\n                          <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                        </div>\n                        <ng-template #son>\n                          <div>\n                            <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                          </div>\n                        </ng-template>\n                      </div>\n                    </nb-card>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n          </div>\n\n          <nb-step [hidden]=\"true\" label=\"Third step\">\n            <div *ngIf=\"uzunluk>0 && !soruYok\" class=\"step-container\">\n              <h3 style=\"text-align: center; text-transform: uppercase;\">Egzersiz Bitti </h3>\n              <h3 style=\"text-align: center; text-transform: uppercase;\">\n                <i class=\"fas fa-check-circle\"></i>Doğru Sayısı: {{dogruSayisi}}</h3>\n              <h3 style=\"text-align: center; text-transform: uppercase;\">Yanlış Sayısı: {{yanlisSayisi}}</h3>\n              <button nbButton (click)=\"turnToSeviye()\">Egzersizi Bitir</button>\n            </div>\n            <div *ngIf=\"soruYok;\">\n              <h3 style=\"text-align: center;text-transform: uppercase;\">Soru Yok! </h3>\n              <h3 style=\"text-align: center;text-transform: uppercase;\">Seviyelere Dönün </h3>\n              <button nbButton hero status=\"warning\" (click)=\"turnToSeviye()\">Seviyelere Dön</button>\n            </div>\n          </nb-step>\n        </nb-stepper>\n      </nb-card-body>\n    </nb-card>\n  </div>\n</div>\n\n\n<!--  <div class=\"col-md-6\" style=\"margin:auto\">\n                    <div id=\"myCarousel\"  *ngIf=\"soruPhotos\" class=\"carousel slide\" data-ride=\"carousel\">\n                        <div class=\"carousel-inner\">\n                          <div class=\"carousel-item active\" *ngFor=\"let image of soruPhotos;let ind =index\" >\n                              <video style=\"width:50%;margin:auto\" muted loop autoplay>\n                                  <source [src]=\"image.url\" type=\"video/mp4\" />\n                                </video>\n                          </div>\n                        </div>\n                      </div>\n                    </div>-->"
+module.exports = "<style>\n  .bos {}\n\n  .bos>>>nb-card {\n    background: none;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n\n  .hidden {\n    visibility: hidden;\n  }\n\n  .none {\n    display: none;\n  }\n</style>\n\n\n<div class=\"steppers-container row\">\n  <div class=\"col-md-12 col-lg-12 col-xxxl-12\">\n    <nb-card>\n      <nb-card-body>\n        <nb-card-body>\n          <label for=\"exampleInputEmail1\">İlerleme Durumu</label>\n          <nb-progress-bar [value]=\"status\" [displayValue]=\"true\" status=\"success\"></nb-progress-bar>\n        </nb-card-body>\n        <nb-stepper #stepper>\n          <div *ngIf=\"tema==1\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <nb-reveal-card #revealCard>\n                  <nb-card-front>\n                    <nb-card accent=\"success\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke\">\n                        <h3 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruIcerik}}\n                        </h3>\n                      </nb-card-body>\n                      <!--<button nbButton style=\"border-radius:0% !important; color: black; font-size: 1.20rem;\"\n                        status=\"success\" (click)=\"soruGoster(revealCard)\">Soruyu Göster</button>-->\n                    </nb-card>\n                  </nb-card-front>\n                  <!--<nb-card-back>\n                    <nb-card accent=\"primary\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke;\">\n                        <h1 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruCumlesi}}\n                        </h1>\n                      </nb-card-body>\n                      <button nbButton status=\"success\"\n                        style=\"border-radius:0% !important ;color: black; font-size: 1.20rem;\"\n                        (click)=\"soruGoster(revealCard)\">METİNİ GÖSTER</button>\n                    </nb-card>\n                  </nb-card-back>-->\n                </nb-reveal-card>\n                <br>\n                <div class=\"card-deck\">\n                  <nb-flip-card\n                    [ngClass]=\"{'col-md-4 col-sm-4':secenekler.length<=3,'col-md-3 col-sm-3':secenekler.length==4 ,'col-md-2 col-sm-2':secenekler.length>4 }\"\n                    class=\"bos card col-md-4\" style=\"text-align:center; border-radius: 5%;\" *ngFor=\"let s of secenekler\"\n                    [ngStyle]=\"sayiStyle\" size=\"small\" #flipCard>\n                    <nb-card-front>\n                      <nb-card size=\"small\" style=\"align-items:center;\">\n                        <div style=\"margin:auto\">\n                          <h4 class=\"mt-3\" style=\"color:black; text-transform: uppercase;\">{{s.icerik}}</h4>\n                          <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"soruKontrol(stepper,s.isTrue,i,flipCard)\">Seç</button>\n                        </div>\n                      </nb-card>\n                    </nb-card-front>\n                    <nb-card-back>\n                      <nb-card style=\"align-items:center;\" size=\"small\">\n                        <div *ngIf=\"s.isTrue==true; else yanlis\" style=\"margin: auto;\">\n                          <h5 style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h5>\n                          <img height=\"100px\" src=\"../../../../assets/images/tick.png\">\n                          <div *ngIf='i != length-1; else son'>\n                            <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                          </div>\n                          <ng-template #son>\n                            <div style=\"margin: auto;\">\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                            </div>\n                          </ng-template>\n                        </div>\n                        <ng-template #yanlis>\n                          <div style=\"margin: auto;\">\n                            <h5 style=\"color:black;  text-transform: uppercase;\">{{s.icerik}}</h5>\n                            <img height=\"100px\"\n                              src=\"http://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/256/Close-icon.png\">\n                            <div *ngIf=\"i != length-1; else son\">\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                            </div>\n                            <ng-template #son>\n                              <div style=\"margin: auto;\">\n                                <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                  (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                              </div>\n                            </ng-template>\n                          </div>\n                        </ng-template>\n                      </nb-card>\n                    </nb-card-back>\n                  </nb-flip-card>\n                </div>\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==3\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div class=\"row justify-content-between\" *ngIf=\"secenekUzunluk>0;\">\n                  <div class=\"col-4\">\n                    <button #buton1 isTrue='secenekler[0][\"isTrue\"]'\n                      (click)='soruKontrol(stepper,secenekler[0][\"isTrue\"],i,null,buton1,null)' adi=\"sol\" nbButton\n                      size=\"large\" style=\"float:inline-start;border-radius: 50%;margin-top: 50%;font-size: xx-large\"\n                      [ngStyle]=\"butonStyle\"\n                      [style.background-color]='submitted? butonYak(secenekler[0][\"isTrue\"]) : \"#7659ff\"'>\n                      &lt; <br> {{secenekler[0][\"icerik\"]}}\n                    </button>\n                  </div>\n                  <div class=\"col-4\" [ngClass]=\"{'container':submitted}\">\n                    <div class=\"photoEdit\" style=\"text-align:center\">\n                      <h1\n                        style=\"font-size:3rem;position: absolute;color: red;text-transform: uppercase;margin-top: 50%;width: 90%; font-weight: 900\">\n                        {{emotionalFaceTrue}}</h1>\n                      <img *ngIf=\"emotionalFaceResim==true\" class=\"image\" style=\"margin:auto;width: 100%;\"\n                        src='{{soru.url}}'>\n                    </div>\n                  </div>\n                  <div class=\"col-4\">\n                    <button #buton2 adi='sag' isTrue='secenekler[1][\"isTrue\"]'\n                      (click)='soruKontrol(stepper,secenekler[1][\"isTrue\"],i,null,buton2,null)' nbButton\n                      [ngStyle]=\"butonStyle\" size=\"large\"\n                      style=\"float:right;border-radius: 50%;margin-top: 50%;font-size: xx-large\"\n                      [style.background-color]='submitted? butonYak(secenekler[1][\"isTrue\"]): \"#7659ff\"'>&gt; <br>\n                      {{secenekler[1][\"icerik\"]}}</button>\n                  </div>\n                  <div *ngIf=\"i != length-1 && submitted; \" class=\"col-md-12 mt-5 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                  </div>\n                  <div *ngIf=\"i == length-1 && submitted\" class=\"col-md-12 mt-5 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==2\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div class=\"row\" *ngIf=\"secenekUzunluk>0;\">\n                  <div *ngIf=\"(firstShowing || submitted ) && !dogruCevap && !ucuncuGosterim \"\n                    style=\"text-align:center; margin: auto\">\n                    <img style=\"margin: auto\" src='{{soru.url}}'>\n                  </div>\n                  <div *ngIf=\"secondShowing\" class=\"row\" style=\"text-align:center; margin: auto\">\n                    <div class=\"col-12 \" style=\"display: contents !important\"\n                      *ngIf=\"secenekler.length>=4; else secondTemplate\">\n                      <div class=\"col-md-3 mb-2\" [ngClass]=\"{'container':submitted}\"\n                        style=\"margin: auto;text-align:center;\" *ngFor=\"let sc of secenekler\">\n                        <div class=\"photoEdit\" #target\n                          [ngClass]=\"{'hidden': dogruCevap,'none':!dogruCevap && submitted}\">\n                          <input type=\"image\" (click)='soruKontrol(stepper,sc.isTrue,i,null,null,target)' class=\"image\"\n                            src='{{sc.url}}'>\n                          <div class=\"middle\">\n                            <div *ngIf=\"sc.isTrue && submitted\"><i class=\"ion-checkmark dogru\"\n                                (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                            <div *ngIf=\"!sc.isTrue && submitted\"><i class=\"ion-close-round yanlis\"\n                                (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                          </div>\n                        </div>\n                      </div>\n                    </div>\n                    <ng-template #secondTemplate>\n                      <div class=\"col-12\" style=\"display: contents !important\">\n                        <div class=\"col-md-4 mb-2\" [ngClass]=\"{'container':submitted}\"\n                          style=\"margin: auto;text-align:center\" *ngFor=\"let sc of secenekler\">\n                          <div class=\"photoEdit\" #target\n                            [ngClass]=\"{'hidden': dogruCevap,'none':!dogruCevap && submitted}\">\n                            <input type=\"image\" (click)='soruKontrol(stepper,sc.isTrue,i,null,null,target)'\n                              class=\"image\" src='{{sc.url}}'>\n                            <div class=\"middle\">\n                              <div *ngIf=\"sc.isTrue && submitted\"><i class=\"ion-checkmark dogru\"\n                                  (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                              <div *ngIf=\"!sc.isTrue && submitted\"><i class=\"ion-close-round yanlis\"\n                                  (click)='soruKontrol(stepper,sc.isTrue,i,null,null)'></i></div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                    </ng-template>\n                    <div *ngIf=\"ucuncuGosterim && !dogruCevap\" class=\"row\" style=\"text-align:center; margin: auto\">\n                      <div class=\"col-12\" style=\"display: contents !important\">\n                        <div class=\"photoEdit mb-2\">\n                          <img class=\"image\" style=\"width:200px\" [src]=\"soru.url\">\n                        </div>\n                        <div class=\"photoEdit mb-2\">\n                          <img class=\"image\" style=\"width:200px\" [src]=\"cevapSrc\">\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                  <div *ngIf=\"i != length-1 && submitted && secondShowing; \" style=\"text-align:center\"\n                    class=\"col-md-12 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                  </div>\n                  <div *ngIf=\"i == length-1 && submitted && secondShowing\" style=\"text-align:center\"\n                    class=\"col-md-12 row\">\n                    <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                      (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==4\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div class=\"row\">\n                  <div *ngIf=\"sorufotogosterim\" class=\"col-md-12\" style=\"text-align:center\">\n                    <div *ngFor=\"let image of soruPhotos;\">\n                      <div *ngIf=\"image['visible'] && !fotoMu\">\n                        <video width=\"25%\" style=\"margin: auto\" muted autoplay (ended)=\"videoEnd()\">\n                          <source [src]=\"image.url\">\n                          Your browser does not support the video tag.\n                        </video>\n                      </div>\n                      <div *ngIf=\"image['visible'] && fotoMu\">\n                        <img width=\"25%\" style=\"margin: auto\" src=\"{{image.url}}\">\n                      </div>\n                    </div>\n                  </div>\n\n                  <div *ngIf=\"soruSecenekGosterim\" class=\"card-deck\">\n                    <div class=\"col-12\" style=\"display: contents !important\">\n                      <div\n                        [ngClass]=\"{'col-md-4 col-sm-4':soruPhotos.length<=3,'col-md-3 col-sm-3':soruPhotos.length==4 ,'col-md-2 col-sm-2':soruPhotos.length>6 }\"\n                        class=\"bos card\" style=\"text-align:center; border-radius: 5%;margin: auto;text-align:center;\"\n                        *ngFor=\"let s of soruPhotos\" [ngStyle]=\"sayiStyle\" #item>\n                        <nb-flip-card #flipCard>\n                          <nb-card-front>\n                            <nb-card size=\"xsmall\">\n                              <div style=\"margin-top:3rem\">\n                                <h4 class=\"mt-3\" style=\"color:black; text-transform: uppercase;\">{{s.secenekAciklama}}\n                                </h4>\n                              </div>\n                              <div class=\"card-body\">\n                                <button nbButton hero fullWidth status=\"success\"\n                                  style=\"font-size:larger; color:black;width: 60%;\"\n                                  (click)=\"EmotionReplayKontrol(stepper,i,item,s.secenekAciklama,s.sira,flipCard,cevap)\">Seç</button>\n                              </div>\n                            </nb-card>\n                          </nb-card-front>\n                          <nb-card-back>\n                            <nb-card style=\"align-items:center;\" size=\"xsmall\">\n                              <div>\n                                <h3 class=\"mt-2\" style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                                <img #cevap width=\"50%\" src=\"../../../../assets/images/tick.png\">\n                              </div>\n                            </nb-card>\n                          </nb-card-back>\n                        </nb-flip-card>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n\n              </form>\n            </nb-step>\n\n          </div>\n          <div *ngIf=\"tema==5 \">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div *ngIf=\"faceReplayGoster\" class=\"col-md-12\" style=\"text-align:center\">\n                  <div *ngFor=\"let image of soruPhotos;\">\n                    <a *ngIf=\"image['visible']\"><img src='{{image.url}}'></a>\n                  </div>\n                </div>\n                <div *ngIf=\"faceReplayDagitim;\">\n                  <div class=\"row\" style=\"text-align:center; margin: auto\">\n                    <div class=\"col-md-3 mb-2\" *ngFor=\"let num of faceReplayNumbers\">\n                      <div *ngFor=\"let item of soruPhotos\">\n                        <input *ngIf=\"item.dagit==num\" type=\"image\" (click)=\"FaceReplaySoruKontrol(stepper,i,item.sira)\"\n                          width=\"75%\" [src]='item.url'>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n          </div>\n          <div *ngIf=\"tema==6\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <nb-reveal-card *ngIf=\"soru.soruTipi==2\" #revealCard>\n                  <nb-card-front>\n                    <nb-card accent=\"success\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke\">\n                        <h3 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruIcerik}}\n                        </h3>\n                      </nb-card-body>\n                      <!--\n                      <button nbButton style=\"border-radius:0% !important; color: black; font-size: 1.20rem;\"\n                        status=\"success\" (click)=\"soruGoster(revealCard)\">Soruyu Göster</button>-->\n                    </nb-card>\n                  </nb-card-front>\n                  <!-- <nb-card-back>\n                    <nb-card accent=\"primary\" size=\"xsmall\">\n                      <nb-card-body style=\"background-color:whitesmoke;\">\n                        <h1 style=\"text-align:center;text-transform: uppercase; color: black\">\n                          {{soru.soruCumlesi}}\n                        </h1>\n                      </nb-card-body>\n                      <button nbButton status=\"success\"\n                        style=\"border-radius:0% !important ;color: black; font-size: 1.20rem;\"\n                        (click)=\"soruGoster(revealCard)\">METİNİ GÖSTER</button>\n                    </nb-card>\n                  </nb-card-back>-->\n                </nb-reveal-card>\n                <div *ngIf=\"soruSuresi>0 ; else soruFoto\">\n                  <div *ngIf=\"soru.soruTipi==1 && firstShowing\" style=\"text-align:center\">\n                    <img src=\"{{soru.url}}\" width=\"175px\" height=\"175px\">\n                  </div>\n                </div>\n                <ng-template #soruFoto>\n                  <div *ngIf=\"soru.soruTipi==1\" style=\"text-align:center\">\n                    <img src=\"{{soru.url}}\" width=\"175px\" height=\"175px\">\n                  </div>\n                </ng-template>\n                <div *ngIf=\"soru.soruTipi==3\" style=\"text-align:center\">\n                  <video width=\"25%\" style=\"margin: auto\" id={{i}} (ended)=\"customVideo(vide)\" muted autoplay #vide>\n                    <source [src]=\"soru.url\">\n                    Your browser does not support the video tag.\n                  </video>\n                </div>\n                <br>\n                <div class=\"card-deck\" *ngIf=\"secondShowing\">\n                  <nb-flip-card\n                    [ngClass]=\"{'col-md-4 col-sm-4':secenekler.length <=3,'col-md-3 col-sm-3':secenekler.length==4 ,'col-md-2 col-sm-2':secenekler.length>4 }\"\n                    class=\"bos card col-md-4\" style=\"text-align:center; border-radius: 5%;\" *ngFor=\"let s of secenekler\"\n                    [ngStyle]=\"sayiStyle\" #flipCard>\n                    <nb-card-front>\n                      <nb-card size=\"small\">\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url ==null || s.url==''\">\n                          <h4 class=\"mt-3\" style=\"color:black; text-transform: uppercase;\">{{s.icerik}}</h4>\n                        </div>\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url !=null && s.url!=''\">\n                          <img src=\"{{s.url}}\" height=\"170px\" width=\"170px\">\n                        </div>\n                        <div class=\"card-body\">\n                          <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"soruKontrol(stepper,s.isTrue,i,flipCard)\">Seç</button>\n                        </div>\n                      </nb-card>\n                    </nb-card-front>\n                    <nb-card-back>\n                      <nb-card style=\"align-items:center;\" size=\"small\">\n                        <div *ngIf=\"s.isTrue==true; else yanlis\" style=\"margin: auto;\">\n                          <h3 style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                          <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/tick.png\">\n                          <div *ngIf='i != length-1; else son'>\n                            <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                              (click)=\"sonrakiSoru(stepper,i, vide)\">Sonraki Soru</button>\n                          </div>\n                          <ng-template #son>\n                            <div style=\"margin: auto;\">\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                            </div>\n                          </ng-template>\n                        </div>\n                        <ng-template #yanlis>\n                          <div style=\"margin: auto;\">\n                            <h3 style=\"color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                            <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/false.png\">\n                            <div *ngIf=\"i != length-1; else son\">\n                              <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                (click)=\"sonrakiSoru(stepper,i, vide)\">Sonraki Soru</button>\n                            </div>\n                            <ng-template #son>\n                              <div>\n                                <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                                  (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                              </div>\n                            </ng-template>\n                          </div>\n                        </ng-template>\n                      </nb-card>\n                    </nb-card-back>\n                  </nb-flip-card>\n                </div>\n              </form>\n            </nb-step>\n          </div>\n          <div *ngIf=\"tema==7\">\n            <nb-step *ngFor=\"let soru of sorular; let i = index\" label=\"{{i + 1}}.Soru\">\n              <form class=\"step-container\">\n                <div *ngIf=\"firstShowing\" style=\"text-align:center; margin: auto\">\n                  <img src=\"{{soru.url}}\" width=\"175px\" height=\"175px\">\n                </div>\n                <div class=\"card-deck\" *ngIf=\"secondShowing\" #target\n                  [ngClass]=\"{'hidden': dogruCevap,'none':!dogruCevap && submitted}\">\n                  <nb-flip-card\n                    [ngClass]=\"{'col-md-4 col-sm-4':secenekler.length <=3,'col-md-3 col-sm-3':secenekler.length==4 ,'col-md-2 col-sm-2':secenekler.length>4 }\"\n                    class=\"bos card col-md-4\" style=\"text-align:center; border-radius: 5%;\" *ngFor=\"let s of secenekler\"\n                    [ngStyle]=\"sayiStyle\" #flipCard>\n                    <nb-card-front>\n                      <nb-card size=\"xsmall\">\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url ==null || s.url==''\">\n                          <h4 class=\"mt-3\" style=\"color:rgb(109, 100, 100); text-transform: uppercase;\">{{s.icerik}}\n                          </h4>\n                        </div>\n                        <div style=\"margin-top:3rem\" *ngIf=\"s.url !=null && s.url!=''\">\n                          <img src=\"{{s.url}}\" width=\"100px\" height=\"100px\">\n                        </div>\n                        <div class=\"card-body\">\n                          <button nbButton hero fullWidth status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"soruKontrol(stepper,s.isTrue,i,flipCard,null,target)\">Seç</button>\n                        </div>\n                      </nb-card>\n                    </nb-card-front>\n                    <nb-card-back>\n                      <nb-card style=\"align-items:center;\" size=\"xsmall\">\n                        <div *ngIf=\"s.isTrue==true; else yanlis\">\n                          <h3 style=\" color:black;  text-transform: uppercase;\">{{s.icerik}}</h3>\n                          <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/tick.png\">\n                          <div *ngIf=\"i != length-1 && submitted && secondShowing; \" style=\"text-align:center\"\n                            class=\"col-md-12 row\">\n                            <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                          </div>\n                          <div *ngIf=\"i == length-1 && submitted && secondShowing\" style=\"text-align:center\"\n                            class=\"col-md-12 row\">\n                            <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                          </div>\n                        </div>\n                        <ng-template #yanlis>\n                          <div>\n                            <h3 style=\"color:black;  text-transform: uppercase;\">{{ s.icerik }}</h3>\n                            <img width=\"125px\" height=\"125px\" src=\"../../../../assets/images/false.png\">\n                            <div *ngIf=\"i != length-1 && submitted && secondShowing; \" style=\"text-align:center\"\n                              class=\"col-md-12 row\">\n                              <button nbButton hero status=\"success\" style=\"font-size:larger; color:black; margin: auto\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                            </div>\n                            <div *ngIf=\"i == length-1 && submitted && secondShowing\" style=\"text-align:center\"\n                              class=\"col-md-12 row\">\n                              <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;margin: auto\"\n                                (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                            </div>\n                          </div>\n                        </ng-template>\n                      </nb-card>\n                    </nb-card-back>\n                  </nb-flip-card>\n                </div>\n                <div *ngIf=\"ucuncuGosterim && !dogruCevap\" style=\"text-align: center;display: flex\">\n                  <div class=\"mb-2 col-4\">\n                    <img class=\"image\" style=\"width:200px;float: right\" src=\"{{soru.url}}\">\n                  </div>\n                  <div class=\"mb-2 col-4\">\n                    <nb-card accent=\"success\">\n                      <div>\n                        <h3 style=\"color:black;  text-transform: uppercase;\">{{ cevapSrc }}</h3>\n                        <img width=\"125px\" src=\"../../../../assets/images/false.png\">\n                        <div *ngIf=\"i != length-1; else son\">\n                          <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;\"\n                            (click)=\"sonrakiSoru(stepper,i)\">Sonraki Soru</button>\n                        </div>\n                        <ng-template #son>\n                          <div>\n                            <button nbButton hero status=\"success\" style=\"font-size:larger; color:black;\"\n                              (click)=\"sonrakiSoru(stepper,i)\">Egzersizi Bitir</button>\n                          </div>\n                        </ng-template>\n                      </div>\n                    </nb-card>\n                  </div>\n                </div>\n              </form>\n            </nb-step>\n          </div>\n\n          <nb-step [hidden]=\"true\" label=\"Third step\">\n            <div *ngIf=\"uzunluk>0 && !soruYok\" class=\"step-container\">\n              <h3 style=\"text-align: center; text-transform: uppercase;\">Egzersiz Bitti </h3>\n              <button nbButton (click)=\"turnToSeviye()\">Egzersizi Bitir</button>\n            </div>\n            <div *ngIf=\"soruYok;\">\n              <h3 style=\"text-align: center;text-transform: uppercase;\">Soru Yok! </h3>\n              <h3 style=\"text-align: center;text-transform: uppercase;\">Seviyelere Dönün </h3>\n              <button nbButton hero status=\"warning\" (click)=\"turnToSeviye()\">Seviyelere Dön</button>\n            </div>\n          </nb-step>\n        </nb-stepper>\n      </nb-card-body>\n    </nb-card>\n  </div>\n</div>\n\n\n<!--  <div class=\"col-md-6\" style=\"margin:auto\">\n                    <div id=\"myCarousel\"  *ngIf=\"soruPhotos\" class=\"carousel slide\" data-ride=\"carousel\">\n                        <div class=\"carousel-inner\">\n                          <div class=\"carousel-item active\" *ngFor=\"let image of soruPhotos;let ind =index\" >\n                              <video style=\"width:50%;margin:auto\" muted loop autoplay>\n                                  <source [src]=\"image.url\" type=\"video/mp4\" />\n                                </video>\n                          </div>\n                        </div>\n                      </div>\n                    </div>-->"
 
 /***/ }),
 
@@ -2932,7 +3022,6 @@ var SorularPageComponent = /** @class */ (function () {
         this.soruPhotoIndex = 0;
         this.keyTıkSayisi = 0;
         this.submitted = false;
-        this.duyguIsımDogru = "";
         this.soruPhotoSelect = [];
         this.emotionSelect = 1;
         this.secondShowing = false;
@@ -2985,6 +3074,7 @@ var SorularPageComponent = /** @class */ (function () {
                 _this.seviyeService.getSeviyeById(_this.urlId).subscribe(function (data) {
                     console.log("data", data);
                     _this.seviye = data;
+                    console.log("seviye", _this.seviye);
                     if (_this.seviye["soruSuresi"] && _this.seviye["soruSuresi"] != null) {
                         _this.soruSuresi = _this.seviye["soruSuresi"];
                     }
@@ -3256,32 +3346,43 @@ var SorularPageComponent = /** @class */ (function () {
     };
     //Klavye eventlerini yakalaması için 
     SorularPageComponent.prototype.keyEvent = function (event) {
-        console.log(event);
-        //Entera basılırsa,tıklanmışsa ve tık sayısı soruların uzunluğundan az ya da eşitse
-        if (event.keyCode === KEY_CODE.ENTER && this.submitted && this.keyTıkSayisi <= this.sorular.length) {
-            this.sonrakiSoru(this.nbStepperComponent, this.keyTıkSayisi - 1);
-        }
-        if (this.kategori["tema"] == 3 && this.keyTıkSayisi < this.sorular.length) {
-            if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
-                //Sağ yön tuşuna basılırsa
-                this.keyTıkSayisi++;
-                console.log("sağ", this.sorular.indexOf);
-                console.log("buton", this.buttons.find(function (i) { return i.adi == "sag"; }));
-                if (this.submitted != true) {
-                    this.soruKontrol(this.nbStepperComponent, this.secenekler[1]["isTrue"], this.sorular.indexOf, null, this.buttons.find(function (i) { return i.adi == "sag"; }));
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        console.log(event);
+                        if (!(event.keyCode === KEY_CODE.ENTER && this.submitted && this.keyTıkSayisi <= this.sorular.length)) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.delay(500)];
+                    case 1:
+                        _a.sent();
+                        this.sonrakiSoru(this.nbStepperComponent, this.keyTıkSayisi - 1);
+                        _a.label = 2;
+                    case 2:
+                        if (this.kategori["tema"] == 3 && this.keyTıkSayisi < this.sorular.length) {
+                            if (event.keyCode === KEY_CODE.RIGHT_ARROW) {
+                                //Sağ yön tuşuna basılırsa
+                                this.keyTıkSayisi++;
+                                console.log("sağ", this.sorular.indexOf);
+                                console.log("buton", this.buttons.find(function (i) { return i.adi == "sag"; }));
+                                if (this.submitted != true) {
+                                    this.soruKontrol(this.nbStepperComponent, this.secenekler[1]["isTrue"], this.sorular.indexOf, null, this.buttons.find(function (i) { return i.adi == "sag"; }));
+                                }
+                            }
+                            if (event.keyCode === KEY_CODE.LEFT_ARROW) {
+                                //Sol yön tuşuna basılırsa
+                                this.keyTıkSayisi++;
+                                console.log("sol");
+                                console.log("buton", this.buttons);
+                                if (this.submitted != true) {
+                                    this.soruKontrol(this.nbStepperComponent, this.secenekler[0]["isTrue"], this.sorular.indexOf, null, this.buttons.find(function (i) { return i.adi == "sol"; }));
+                                }
+                                //    console.log("buton",this.buttons.find(i=>i.adi=="sol"))
+                            }
+                        }
+                        return [2 /*return*/];
                 }
-            }
-            if (event.keyCode === KEY_CODE.LEFT_ARROW) {
-                //Sol yön tuşuna basılırsa
-                this.keyTıkSayisi++;
-                console.log("sol");
-                console.log("buton", this.buttons);
-                if (this.submitted != true) {
-                    this.soruKontrol(this.nbStepperComponent, this.secenekler[0]["isTrue"], this.sorular.indexOf, null, this.buttons.find(function (i) { return i.adi == "sol"; }));
-                }
-                //    console.log("buton",this.buttons.find(i=>i.adi=="sol"))
-            }
-        }
+            });
+        });
     };
     //Sonraki soruya geçiş fonksiyonu 
     SorularPageComponent.prototype.sonrakiSoru = function (stepper, i, vide) {
@@ -3289,6 +3390,15 @@ var SorularPageComponent = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        ///
+                        try {
+                            this.videolar[i + 1].currentTime = 0;
+                            this.videolar[i + 1].load();
+                            this.videolar[i + 1].autoplay = true;
+                            this.videolar[i + 1].play();
+                        }
+                        catch (error) {
+                        }
                         //Doğru cevap ve soru  gösterimi
                         this.emotionalFaceResim = false;
                         this.ucuncuGosterim = false;
@@ -3360,14 +3470,19 @@ var SorularPageComponent = /** @class */ (function () {
                         if (element) {
                             //Gelen divden doğru cevabı buluyoruz ve cevap srcye atıyoruz
                             if (element["children"][0]["src"]) {
-                                this.cevapSrc = element["children"][0]["src"];
-                                console.log("element", element["children"][0]["src"]);
+                                //this.cevapSrc = element["children"][0]["src"]
+                                this.cevapSrc = this.secenekler.find(function (s) { return s.isTrue == true; })["url"];
+                                console.log("element", element);
+                            }
+                            else {
+                                this.cevapSrc = this.secenekler.find(function (s) { return s.isTrue == true; })["icerik"];
                             }
                             //Doğru cevap ve soru fotoğrafı gösterilir
                             this.ucuncuGosterim = true;
+                            console.log("element", this.cevapSrc);
                         }
                         console.log("i", i);
-                        if (!isTrue) return [3 /*break*/, 5];
+                        if (!(isTrue && isTrue == true)) return [3 /*break*/, 5];
                         //Doğru cevabın görünürlüğünü ayarlıyoruz 
                         if (element) {
                             element.setAttribute("style", "visibility:visible");
@@ -3416,7 +3531,7 @@ var SorularPageComponent = /** @class */ (function () {
                         if (!this.cevapSrc && this.fotoMu) {
                             this.cevapSrc = this.secenekler.find(function (s) { return s.isTrue == true; })["icerik"];
                         }
-                        console.log("duyguIsimDogu", this.duyguIsımDogru);
+                        console.log("yanlış", this.duyguIsımDogru);
                         this.yanlisSayisi++;
                         this.dogruCevap = false;
                         //Eğer flipcard ise seçenek
@@ -3429,7 +3544,7 @@ var SorularPageComponent = /** @class */ (function () {
                             this.butonYak(false);
                         }
                         if (!(i == this.length - 1)) return [3 /*break*/, 7];
-                        this.errorToastMessage("Yanlış Cevap", "Tebrikler test bitmiştir .");
+                        this.errorToastMessage("Yanlış Cevap", "Tebrikler egzersiz bitmiştir .");
                         return [4 /*yield*/, this.delay(750)];
                     case 6:
                         _a.sent();
@@ -3460,7 +3575,7 @@ var SorularPageComponent = /** @class */ (function () {
                         //Tıklandı = true
                         this.submitted = true;
                         console.log("i", this.soruPhotoSelect);
-                        if (!(sira == this.soruPhotoSelect[this.soruPhotoIndex])) return [3 /*break*/, 4];
+                        if (!(sira == this.soruPhotoSelect[this.soruPhotoIndex])) return [3 /*break*/, 6];
                         this.soruPhotoIndex++;
                         if (!item) return [3 /*break*/, 2];
                         flipCard.toggle();
@@ -3483,33 +3598,35 @@ var SorularPageComponent = /** @class */ (function () {
                         return [4 /*yield*/, this.delay(750)];
                     case 3:
                         _a.sent();
-                        //Soruların sırası ile son gelen sıra aynı ise doğru sayısını arttır sonraki soruya geç
-                        if (this.soruPhotos.length == sira) {
-                            this.dogruSayisi++;
-                            if (!this.authhElper.userActor) {
-                                this.storage[this.userRaporIndex]["dogru"]++;
-                            }
-                            this.sonrakiSoru(stepper, i);
+                        if (!(this.soruPhotos.length == sira)) return [3 /*break*/, 5];
+                        this.dogruSayisi++;
+                        if (!this.authhElper.userActor) {
+                            this.storage[this.userRaporIndex]["dogru"]++;
                         }
-                        return [3 /*break*/, 9];
+                        return [4 /*yield*/, this.delay(500)];
                     case 4:
+                        _a.sent();
+                        this.sonrakiSoru(stepper, i);
+                        _a.label = 5;
+                    case 5: return [3 /*break*/, 11];
+                    case 6:
                         //Yanlış sayısı arttırılıyor
                         this.yanlisSayisi++;
                         if (!this.authhElper.userActor) {
                             this.storage[this.userRaporIndex]["yanlis"]++;
                         }
-                        if (!item) return [3 /*break*/, 7];
+                        if (!item) return [3 /*break*/, 9];
                         cevap["src"] = "../../../../assets/images/false.png";
                         return [4 /*yield*/, this.delay(300)];
-                    case 5:
+                    case 7:
                         _a.sent();
                         flipCard.toggle();
                         return [4 /*yield*/, this.delay(500)];
-                    case 6:
+                    case 8:
                         _a.sent();
                         item.setAttribute("style", "visibility:hidden");
-                        _a.label = 7;
-                    case 7:
+                        _a.label = 9;
+                    case 9:
                         //Son soru ise testi bitiriyor değilse sonraki soruya geçiyor 
                         if (i == this.length - 1) {
                             this.errorToastMessage("Yanlış Cevap", "Tebrikler test bitmiştir .");
@@ -3518,11 +3635,11 @@ var SorularPageComponent = /** @class */ (function () {
                             this.errorToastMessage("Yanlış Cevap", "Sonraki soruya geçebilirsiniz.");
                         }
                         return [4 /*yield*/, this.delay(750)];
-                    case 8:
+                    case 10:
                         _a.sent();
                         this.sonrakiSoru(stepper, i);
-                        _a.label = 9;
-                    case 9:
+                        _a.label = 11;
+                    case 11:
                         //local storage'e son kalınan index atanıyor
                         if (!this.authhElper.userActor) {
                             this.storage[this.userRaporIndex]["index"] = this.nbStepperComponent.selectedIndex;
@@ -3547,15 +3664,21 @@ var SorularPageComponent = /** @class */ (function () {
                             this.status = Math.trunc(((this.storage[this.userRaporIndex]["index"]) / this.sorular.length) * 100);
                         }
                         this.soruPhotos[0]["visible"] = true;
-                        i = 0;
-                        _a.label = 1;
+                        return [4 /*yield*/, this.delay(this.soruSuresi)
+                            //İlk fotoğrafın gösterimi için 
+                            //Fotoğraflar birer saniye gösteriliyor
+                        ];
                     case 1:
-                        if (!(i < this.soruPhotos.length)) return [3 /*break*/, 6];
+                        _a.sent();
+                        i = 0;
+                        _a.label = 2;
+                    case 2:
+                        if (!(i < this.soruPhotos.length)) return [3 /*break*/, 7];
                         //Sorulara dağılacakları index veriliyor
                         this.soruPhotos[i]["dagit"] = this.faceReplayRandom[i];
-                        if (!(i == this.soruPhotos.length - 1)) return [3 /*break*/, 3];
-                        return [4 /*yield*/, this.delay(this.soruSuresi)];
-                    case 2:
+                        if (!(i == this.soruPhotos.length - 1)) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.delay(this.soruSuresi + 500)];
+                    case 3:
                         _a.sent();
                         //Soru fotoğrafını kapat
                         this.faceReplayGoster = false;
@@ -3563,17 +3686,17 @@ var SorularPageComponent = /** @class */ (function () {
                         this.faceReplayDagitim = true;
                         //Soru fotoğrafının indexini sıfırla
                         this.soruPhotoIndex = 0;
-                        return [3 /*break*/, 5];
-                    case 3: return [4 /*yield*/, this.delay(this.soruSuresi)];
-                    case 4:
+                        return [3 /*break*/, 6];
+                    case 4: return [4 /*yield*/, this.delay(this.soruSuresi + 500)];
+                    case 5:
                         _a.sent();
                         this.soruPhotos[i + 1]["visible"] = true;
                         this.soruPhotos[i]["visible"] = false;
-                        _a.label = 5;
-                    case 5:
+                        _a.label = 6;
+                    case 6:
                         i++;
-                        return [3 /*break*/, 1];
-                    case 6: return [2 /*return*/];
+                        return [3 /*break*/, 2];
+                    case 7: return [2 /*return*/];
                 }
             });
         });
@@ -3669,7 +3792,9 @@ var SorularPageComponent = /** @class */ (function () {
                     case 4:
                         _a.sent();
                         _a.label = 5;
-                    case 5:
+                    case 5: return [4 /*yield*/, this.delay(500)];
+                    case 6:
+                        _a.sent();
                         this.faceReplayDagitim = false;
                         this.faceReplayGoster = true;
                         return [2 /*return*/];
@@ -3696,11 +3821,14 @@ var SorularPageComponent = /** @class */ (function () {
                             console.log("yok");
                         }
                         //this.faceReplayDagitim=true;
-                        return [4 /*yield*/, this.delay(this.soruSuresi)];
+                        return [4 /*yield*/, this.delay(this.soruSuresi + 500)];
                     case 1:
                         //this.faceReplayDagitim=true;
                         _a.sent();
                         this.firstShowing = false;
+                        return [4 /*yield*/, this.delay(500)];
+                    case 2:
+                        _a.sent();
                         this.secondShowing = true;
                         return [2 /*return*/];
                 }
@@ -3712,12 +3840,14 @@ var SorularPageComponent = /** @class */ (function () {
         if (this.soruPhotoIndex == this.soruPhotos.length - 1) {
             this.soruPhotos.sort(function (a, b) { return 0.5 - Math.random(); });
             console.log("sort", this.soruPhotos);
+            this.delay(500);
             this.sorufotogosterim = false;
             this.soruSecenekGosterim = true;
             this.soruPhotoIndex = 0;
         }
         else {
             this.soruPhotoIndex++;
+            this.delay(500);
             this.soruPhotos[this.soruPhotoIndex - 1]["visible"] = false;
             this.soruPhotos[this.soruPhotoIndex]["visible"] = true;
         }
@@ -3738,7 +3868,7 @@ var SorularPageComponent = /** @class */ (function () {
                           return a.sira - b.sira;
                         })*/
                         this.soruPhotos.sort(function (a, b) { return 0.5 - Math.random(); });
-                        return [4 /*yield*/, this.delay(this.soruSuresi)];
+                        return [4 /*yield*/, this.delay(this.soruSuresi + 500)];
                     case 2:
                         _a.sent();
                         //Soru fotoğrafını kapat
@@ -3748,7 +3878,7 @@ var SorularPageComponent = /** @class */ (function () {
                         //Soru fotoğrafının indexini sıfırla
                         this.soruPhotoIndex = 0;
                         return [3 /*break*/, 5];
-                    case 3: return [4 /*yield*/, this.delay(this.soruSuresi)];
+                    case 3: return [4 /*yield*/, this.delay(this.soruSuresi + 500)];
                     case 4:
                         _a.sent();
                         this.soruPhotoIndex++;
@@ -3807,9 +3937,6 @@ var SorularPageComponent = /** @class */ (function () {
                     });
                     console.log("vide", this.videolar);
                 }
-                if (vide["id"] >= 0) {
-                    //this.videolar[vide["id"]].play();
-                }
                 return [2 /*return*/];
             });
         });
@@ -3838,7 +3965,7 @@ var SorularPageComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('window:keyup', ['$event']),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [KeyboardEvent]),
-        __metadata("design:returntype", void 0)
+        __metadata("design:returntype", Promise)
     ], SorularPageComponent.prototype, "keyEvent", null);
     SorularPageComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({

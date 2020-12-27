@@ -397,7 +397,7 @@ var VideoUploadCustomComponent = /** @class */ (function () {
         var id = -1;
         var url = "";
         id = this.rowData["kategoriID"];
-        var uploadReq = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpRequest"]('POST', "https://sosyalbilis.com/api/Custom/" + urlType + '/' + this.currentUrl, formData, {
+        var uploadReq = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpRequest"]('POST', "/api/Custom/" + urlType + '/' + this.currentUrl, formData, {
             reportProgress: true
         });
         this.http.request(uploadReq).subscribe(function (event) {

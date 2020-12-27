@@ -24,7 +24,7 @@ namespace QuizAPI.Controllers
         public List<Oturum> GetAll()
         {
 
-            List<Oturum> oturumlar = _oturumService.GetAll();
+            List<Oturum> oturumlar = _oturumService.GetAll().OrderBy(o=> o.OturumID).ToList();
 
             return oturumlar;
         }

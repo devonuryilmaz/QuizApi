@@ -4966,9 +4966,16 @@ var SeviyeComponent = /** @class */ (function () {
         return id;
     };
     SeviyeComponent.prototype.getByOturumAdiFetchId = function (name) {
-        var o = this.oturumlar.find(function (o) { return o["oturumAdi"] == name; });
-        var id = o["oturumID"];
-        return id;
+        var o;
+        var id;
+        try {
+            o = this.oturumlar.find(function (o) { return o["oturumAdi"] == name; });
+            id = o["oturumID"];
+            return id;
+        }
+        catch (_a) {
+            return 0;
+        }
     };
     SeviyeComponent.prototype.onCreateConfirm = function (event) {
         if (event.newData.aktif == "Aktif" || event.newData.aktif == "Pasif") {

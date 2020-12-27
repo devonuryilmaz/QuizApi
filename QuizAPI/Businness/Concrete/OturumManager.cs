@@ -58,7 +58,7 @@ namespace QuizAPI.Businness.Concrete
                     {
                         var oturumlar = _oturumDal.Get(o => o.OturumID == oturumID);
                         var oturum = _oturumDal.GetAll(o=> o.OturumID > oturumID).First();
-                        if (DateTime.Now > bitisTarihi.AddHours(24))
+                        if (DateTime.Now > bitisTarihi.AddMinutes(5))
                         {
                             return oturum;
                         }
